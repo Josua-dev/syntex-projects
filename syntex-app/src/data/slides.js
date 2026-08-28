@@ -1,0 +1,6 @@
+export const heroSlides = [
+  { src:'/images/office-wide.jpg', alt:'Syntex Technologies head office, 340 Sam Nujoma Drive, Klein Windhoek', eyebrow:'Windhoek \u00b7 Namibia', title:'Enterprise systems, engineered locally.', text:'From our office on Sam Nujoma Drive, Syntex designs, integrates and supports the systems Namibian operations run on.', cta:{label:'Talk to Syntex',href:'/contact'} },
+  { src:'/images/datacentre.jpg', alt:'Enterprise data centre with rows of server racks', eyebrow:'Infrastructure', title:'Infrastructure that stays available.', text:'Servers, storage and the environments that keep enterprise operations connected, secure and online.', cta:{label:'Explore Solutions',href:'/solutions'} },
+  { src:'/images/network-cabling.jpg', alt:'Structured network cabling connected to a server rack', eyebrow:'Networking', title:'Networks built to a standard.', text:'Structured cabling, switching and security \u2014 engineered, documented and supported end to end.', cta:{label:'Our Services',href:'/services'} },
+  { src:'/images/server-room.jpg', alt:'Server room aisle in an enterprise facility', eyebrow:'Managed Services', title:'Supported for the long term.', text:'We stay accountable after go-live \u2014 monitoring, maintenance and knowledge transfer built into every engagement.', cta:{label:'Why Syntex',href:'/about'} },
+]

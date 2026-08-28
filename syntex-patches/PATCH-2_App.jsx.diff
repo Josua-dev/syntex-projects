@@ -1,0 +1,19 @@
+PATCH 2 — Fix the anime.js v4 default-import crash in src/App.jsx
+Your bundle is anime.js v4 (no default export). `import anime from 'animejs'`
+is undefined -> "anime is not a function" on every route.
+
+- import anime from 'animejs';
++ import { animate, stagger } from 'animejs';
+
+Replace the mount effect:
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const anim = animate('.eyebrow', {
+      opacity: [0, 1], translateY: [-20, 0],
+      duration: 600, delay: stagger(50), ease: 'outQuad',
+    });
+    return () => anim && anim.revert && anim.revert();
+  }, []);
+
+Also: delete the stray 'use client' (Vite SPA), and delete any committed
+src/.../anime.min.js (duplicates the npm package).

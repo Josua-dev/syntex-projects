@@ -1,0 +1,5 @@
+.photobg{position:absolute;inset:0;overflow:hidden;z-index:0}
+.photobg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photobg-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,27,42,calc(var(--ov,0.62) + 0.12)) 0%,rgba(13,27,42,var(--ov,0.62)) 55%,rgba(20,39,60,calc(var(--ov,0.62) + 0.08)) 100%)}
+@media (prefers-reduced-motion:no-preference){.photobg-img{animation:photobg-zoom 24s var(--ease) infinite alternate}}
+@keyframes photobg-zoom{from{transform:scale(1)}to{transform:scale(1.06)}}

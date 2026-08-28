@@ -1,0 +1,13 @@
+.findus{display:grid;grid-template-columns:1fr 1.4fr;gap:0;background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
+.findus-address{display:flex;flex-direction:column;justify-content:center;padding:var(--s-7);border-right:1px solid var(--line)}
+.findus-address h3{font-size:1.4rem;margin:var(--s-3) 0 var(--s-4);color:var(--navy)}
+.findus-address address{font-style:normal;display:flex;flex-direction:column;gap:2px;font-size:0.92rem;color:var(--ink-soft);line-height:1.6}
+.findus-phone{margin-top:var(--s-4);font-family:var(--f-display);font-size:1.15rem;font-weight:600;color:var(--signal-deep);transition:color var(--dur-fast) var(--ease)}
+.findus-phone:hover{color:var(--copper)}
+.findus-osm{margin-top:var(--s-3);font-family:var(--f-mono);font-size:0.76rem;color:var(--ink-faint)}
+.findus-osm:hover{color:var(--signal-deep)}
+.findus-map{position:relative;min-height:320px;background:var(--paper-dim);overflow:hidden}
+.findus-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform var(--dur-slow) var(--ease-out)}
+.findus:hover .findus-photo{transform:scale(1.03)}
+.findus-photo-link{position:absolute;bottom:var(--s-4);right:var(--s-4);font-family:var(--f-mono);font-size:0.72rem;color:var(--paper);background:rgba(13,27,42,0.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--glass-border-dk);padding:6px 12px;border-radius:var(--r-pill)}
+@media (max-width:720px){.findus{grid-template-columns:1fr}.findus-address{border-right:none;border-bottom:1px solid var(--line);padding:var(--s-6)}.findus-map{min-height:260px}}

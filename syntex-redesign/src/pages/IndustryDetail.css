@@ -1,0 +1,23 @@
+/* SYNTEX — Industry detail. Navy header + two-column body. */
+.idt-header { background: var(--navy); color: var(--paper); padding: calc(var(--nav-h) + var(--s-6)) 0 var(--s-7); border-bottom: 2px solid var(--signal); }
+.idt-header .breadcrumbs { margin-bottom: var(--s-4); }
+.idt-header h1 { color: var(--white); font-size: var(--t-h1); margin: var(--s-3) 0 var(--s-3); max-width: 18ch; }
+.idt-intro { font-size: var(--t-lead); color: color-mix(in srgb, var(--paper) 76%, transparent); max-width: 58ch; margin: 0; }
+.eyebrow.on-dark { color: var(--signal); }
+
+.idt-body { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--s-8); padding: var(--s-9) 0 var(--s-7); align-items: start; }
+.idt-main h2 { font-size: var(--t-h3); margin: 0 0 var(--s-3); color: var(--navy); }
+.idt-lead { font-size: var(--t-lead); color: var(--graphite); margin: 0; }
+.idt-main p { color: var(--ink-soft); max-width: 56ch; }
+.idt-block { margin-top: var(--s-7); }
+
+.idt-aside { position: sticky; top: calc(var(--nav-h) + var(--s-4)); background: var(--paper-dim); border: 1px solid var(--line); border-top: 2px solid var(--signal); border-radius: var(--r-lg); padding: var(--s-5); }
+.idt-aside-label { font-family: var(--f-mono); font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+.idt-areas { list-style: none; margin: var(--s-3) 0 var(--s-4); padding: 0; display: flex; flex-direction: column; gap: var(--s-2); }
+.idt-areas a { display: flex; flex-direction: column; gap: 2px; padding: var(--s-3); background: var(--white); border: 1px solid var(--line); border-radius: var(--r-md); transition: border-color var(--dur-fast) var(--ease); }
+.idt-areas a:hover { border-color: var(--signal); }
+.idt-area-cat { font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal-deep); }
+.idt-area-title { font-size: 0.92rem; font-weight: 500; color: var(--navy); }
+.idt-cta { width: 100%; justify-content: center; }
+
+@media (max-width: 860px) { .idt-body { grid-template-columns: 1fr; gap: var(--s-6); } .idt-aside { position: static; } }

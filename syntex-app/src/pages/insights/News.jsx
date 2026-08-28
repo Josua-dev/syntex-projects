@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function InsightsNews(){return(<Placeholder eyebrow="Insights · News" title="Company news and announcements." description="Verified company updates will be published here as they are released." breadcrumbs={[{label:'Insights',to:'/insights'},{label:'News'}]} suggestions={[{to:'/about',label:'About Syntex'},{to:'/contact',label:'Contact'}]}/>)}

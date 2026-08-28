@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function AboutLeadership(){return(<Placeholder eyebrow="About · Leadership" title="Leadership team." description="Leadership profiles will be published here once verified for publication." breadcrumbs={[{label:'About',to:'/about'},{label:'Leadership'}]} suggestions={[{to:'/about',label:'About Syntex'},{to:'/about/careers',label:'Careers'}]}/>)}

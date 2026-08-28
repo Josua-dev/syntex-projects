@@ -1,0 +1,21 @@
+/* SYNTEX — SimplePage shell. Navy header + readable prose body. */
+.sp-header { background: var(--navy); color: var(--paper); padding: calc(var(--nav-h) + var(--s-7)) 0 var(--s-7); border-bottom: 2px solid var(--signal); }
+.sp-header .breadcrumbs { margin-bottom: var(--s-4); }
+.sp-header h1 { color: var(--white); font-size: var(--t-h1); margin: var(--s-3) 0 var(--s-3); max-width: 20ch; }
+.sp-lead { font-size: var(--t-lead); color: color-mix(in srgb, var(--paper) 76%, transparent); max-width: 60ch; margin: 0; }
+.eyebrow.on-dark { color: var(--signal); }
+
+.sp-body { padding: var(--s-9) 0 var(--s-7); max-width: 760px; }
+.sp-intro { font-size: var(--t-lead); color: var(--graphite); margin: 0 0 var(--s-5); }
+.sp-section { margin-top: var(--s-7); }
+.sp-section h2 { font-size: var(--t-h3); margin: 0 0 var(--s-3); color: var(--navy); }
+.sp-section p { color: var(--ink-soft); margin: 0 0 var(--s-4); }
+.sp-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: var(--s-2); }
+.sp-list li {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: var(--s-3) var(--s-4); background: var(--paper-dim);
+  border: 1px solid var(--line); border-left: 3px solid var(--signal);
+  border-radius: var(--r-md); color: var(--ink-soft);
+}
+.sp-list-label { font-weight: 600; color: var(--navy); }
+.sp-list-text { font-size: 0.9rem; }

@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function AboutCareers(){return(<Placeholder eyebrow="About · Careers" title="Build enterprise systems that matter." description="Open roles will be listed here as they become available. You're welcome to introduce yourself to the Syntex team." breadcrumbs={[{label:'About',to:'/about'},{label:'Careers'}]} suggestions={[{to:'/contact',label:'Contact'},{to:'/about',label:'About Syntex'}]}/>)}

@@ -1,0 +1,15 @@
+PATCH 5 — Gate the anime.js hero draw on reduced motion (anime-animejs.jsx)
+Add as the FIRST line of animateHeroDiagram():
+
+  if (typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.hero-diagram svg path').forEach((p) => {
+      p.style.strokeDashoffset = '0';
+    });
+    return;
+  }
+
+Also fix the malformed selector in animateOnScroll() — it must be ONE string:
+  animate('.sectors .sector-list li, .values .value-card, .service-card, .process .step, .capabilities .cap-item', { ... })
+
+NOTE: the full corrected module is provided as anime-animejs.jsx (supersedes this diff).

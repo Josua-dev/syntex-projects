@@ -1,0 +1,39 @@
+/* SYNTEX — Projects. Verified vs engagement records, clearly separated. */
+.prj-hero { padding: calc(var(--nav-h) + var(--s-8)) 0 var(--s-7); background: var(--paper); border-bottom: 1px solid var(--line); }
+.prj-hero h1 { font-size: var(--t-h1); margin: var(--s-3) 0 var(--s-4); max-width: 16ch; }
+.prj-hero p { font-size: var(--t-lead); color: var(--ink-soft); max-width: 64ch; margin: 0; }
+
+.prj-verified { padding: var(--s-8) 0; }
+.prj-records { padding: var(--s-8) 0; background: var(--paper-dim); border-top: 1px solid var(--line); }
+.prj-sec-head { display: flex; align-items: center; gap: var(--s-3); flex-wrap: wrap; margin-bottom: var(--s-5); }
+.prj-sec-head h2 { font-size: var(--t-h3); margin: 0; }
+.prj-rule { width: 40px; height: 2px; background: var(--signal); flex: none; }
+.prj-sec-note { width: 100%; font-size: 0.85rem; color: var(--ink-faint); margin: 0; }
+
+.prj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); }
+.prj-card {
+  display: flex; flex-direction: column; height: 100%;
+  padding: var(--s-5); background: var(--white);
+  border: 1px solid var(--line); border-radius: var(--r-lg);
+  border-top: 2px solid transparent;
+  transition: border-top-color var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+.prj-card:hover { border-top-color: var(--signal); transform: translateY(-3px); }
+.prj-card.is-verified { border-top-color: var(--signal); }
+.prj-badge {
+  align-self: flex-start; font-family: var(--f-mono); font-size: 0.62rem;
+  letter-spacing: 0.08em; text-transform: uppercase; color: var(--signal-deep);
+  background: var(--signal-tint, #FBF1DC); border: 1px solid var(--line);
+  padding: 3px 8px; border-radius: var(--r-sm); margin-bottom: var(--s-3);
+}
+.prj-badge.is-muted { color: var(--ink-faint); background: var(--paper-dim); }
+.prj-card h3 { font-size: 1.2rem; margin: 0 0 var(--s-2); color: var(--navy); }
+.prj-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 var(--s-4); flex: 1; }
+.prj-meta { display: flex; gap: var(--s-4); margin: 0 0 var(--s-4); }
+.prj-meta div { display: flex; flex-direction: column; gap: 2px; }
+.prj-meta dt { font-family: var(--f-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); }
+.prj-meta dd { margin: 0; font-size: 0.85rem; font-weight: 600; color: var(--graphite); }
+.prj-go { font-family: var(--f-mono); font-size: 0.78rem; color: var(--signal-deep); }
+
+@media (max-width: 900px) { .prj-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .prj-grid { grid-template-columns: 1fr; } }

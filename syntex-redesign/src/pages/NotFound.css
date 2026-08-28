@@ -1,0 +1,18 @@
+/* SYNTEX — 404. Navy field, centred, on-brand. */
+.nf {
+  background:
+    linear-gradient(180deg, var(--navy) 0%, var(--brand-blue-ink, var(--bronze)) 100%);
+  color: var(--paper);
+  min-height: 80vh; display: flex; align-items: center;
+  padding: calc(var(--nav-h) + var(--s-8)) 0 var(--s-9);
+}
+.nf-inner { max-width: 640px; }
+.nf .eyebrow { color: var(--signal); }
+.nf h1 { color: var(--white); font-size: var(--t-h1); margin: var(--s-3) 0 var(--s-4); }
+.nf p { font-size: var(--t-lead); color: color-mix(in srgb, var(--paper) 74%, transparent); margin: 0 0 var(--s-6); }
+.nf-links { display: flex; flex-wrap: wrap; gap: var(--s-3); margin-bottom: var(--s-7); }
+.nf .btn-ghost { color: var(--paper); border-color: color-mix(in srgb, var(--paper) 28%, transparent); }
+.nf .btn-ghost:hover { border-color: var(--paper); }
+.nf-map { display: flex; flex-wrap: wrap; gap: var(--s-4); padding-top: var(--s-5); border-top: 1px solid var(--line-on-dark); }
+.nf-map a { font-family: var(--f-mono); font-size: 0.8rem; color: color-mix(in srgb, var(--paper) 60%, transparent); }
+.nf-map a:hover { color: var(--signal); }

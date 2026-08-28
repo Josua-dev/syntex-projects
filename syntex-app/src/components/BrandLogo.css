@@ -1,0 +1,7 @@
+.brandlogo-link{display:inline-flex}.brandlogo{display:inline-flex;align-items:center;gap:10px}
+.brandlogo-mark{height:40px;width:auto;object-fit:contain;display:block}
+.brandlogo-text{display:flex;flex-direction:column;line-height:1.05}
+.brandlogo-name{font-family:var(--f-display);font-size:1.15rem;font-weight:600;letter-spacing:-0.01em;color:var(--navy)}
+.brandlogo-name b{font-weight:400;color:var(--ink-soft)}
+.brandlogo-tag{font-family:var(--f-mono);font-size:0.6rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--copper);margin-top:2px}
+.brandlogo-light .brandlogo-name{color:var(--white)}.brandlogo-light .brandlogo-name b{color:color-mix(in srgb,var(--paper) 75%,transparent)}.brandlogo-light .brandlogo-tag{color:var(--copper-soft)}

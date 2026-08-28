@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function InsightsCases(){return(<Placeholder eyebrow="Insights · Case Studies" title="Deployment case studies." description="Detailed case studies are being prepared. Published deployment information is available on the Projects page." breadcrumbs={[{label:'Insights',to:'/insights'},{label:'Case Studies'}]} suggestions={[{to:'/projects',label:'Projects'},{to:'/industries',label:'Industries'}]}/>)}

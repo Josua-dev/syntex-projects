@@ -1,0 +1,13 @@
+.findus { display: grid; grid-template-columns: 1fr 1.4fr; gap: 0; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
+.findus-address { display: flex; flex-direction: column; justify-content: center; padding: var(--s-7); border-right: 1px solid var(--line); }
+.findus-address h3 { font-size: 1.4rem; margin: var(--s-3) 0 var(--s-4); color: var(--navy); }
+.findus-address address { font-style: normal; display: flex; flex-direction: column; gap: 2px; font-size: 0.92rem; color: var(--ink-soft); line-height: 1.6; }
+.findus-phone { margin-top: var(--s-4); font-family: var(--f-display); font-size: 1.15rem; font-weight: 600; color: var(--signal-deep); transition: color var(--dur-fast) var(--ease); }
+.findus-phone:hover { color: var(--copper); }
+.findus-osm { margin-top: var(--s-3); font-family: var(--f-mono); font-size: 0.76rem; color: var(--ink-faint); transition: color var(--dur-fast) var(--ease); }
+.findus-osm:hover { color: var(--signal-deep); }
+.findus-map { position: relative; min-height: 320px; background: var(--paper-dim); }
+.findus-map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.findus-unavailable { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-3); padding: var(--s-5); text-align: center; color: var(--ink-soft); font-size: 0.9rem; }
+.findus-unavailable a { font-family: var(--f-mono); font-size: 0.78rem; color: var(--signal-deep); }
+@media (max-width: 720px) { .findus { grid-template-columns: 1fr; } .findus-address { border-right: none; border-bottom: 1px solid var(--line); padding: var(--s-6); } .findus-map { min-height: 260px; } }

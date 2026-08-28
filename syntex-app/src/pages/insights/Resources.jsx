@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function InsightsResources(){return(<Placeholder eyebrow="Insights · Resources" title="Technical resources and guides." description="Downloadable guides and technical references will be published here once available." breadcrumbs={[{label:'Insights',to:'/insights'},{label:'Resources'}]} suggestions={[{to:'/insights/approach',label:'Our Approach'},{to:'/services',label:'Services'}]}/>)}

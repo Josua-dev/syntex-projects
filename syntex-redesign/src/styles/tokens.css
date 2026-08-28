@@ -1,0 +1,136 @@
+/* =============================================================
+   SYNTEX TECHNOLOGIES — Design System / Tokens
+   "Namibian Infrastructure Standard" — brand-true blue + gold.
+   Import this ONCE, before any component CSS.
+   ============================================================= */
+:root {
+  /* ---- Brand core (sampled from the Syntex logo) ---- */
+  --brand-blue:      #1F6FC4;
+  --brand-blue-deep: #0B2A4A;
+  --brand-blue-ink:  #071B30;
+  --brand-blue-lite: #2E86D8;
+  --brand-gold:      #E5A93C;
+  --brand-gold-deep: #C6871B;
+
+  /* ---- Core surfaces ---- */
+  --navy:        var(--brand-blue-deep);
+  --navy-700:    #14273c;
+  --navy-600:    #1c3350;
+  --graphite:    #2b2f36;
+  --steel:       #4a5765;
+
+  --paper:       #FAFAF8;
+  --paper-dim:   #F1F4F8;
+  --white:       #ffffff;
+
+  /* ---- Accent (single source of truth — gold) ---- */
+  --copper:      var(--brand-gold);
+  --copper-deep: var(--brand-gold-deep);
+  --signal:      var(--brand-gold);
+  --signal-deep: var(--brand-gold-deep);
+  --signal-tint: #FBF1DC;
+
+  /* ---- Semantic ink ---- */
+  --ink:         #131a22;
+  --ink-soft:    #46525F;
+  --ink-faint:   #8A94A0;
+
+  /* ---- Lines & borders ---- */
+  --line:            #E2E7EE;
+  --border:          #E2E7EE;
+  --line-on-dark:    rgba(250,250,248,.10);
+
+  /* ---- Legacy aliases (back-compat) ---- */
+  --orange:        var(--copper);
+  --orange-dark:   var(--copper-deep);
+  --blueprint:     var(--navy);
+  --blueprint-mid: var(--brand-blue-lite);
+
+  /* ---- Radius: square-leaning, engineered ---- */
+  --r-sm:   3px;
+  --r-md:   4px;
+  --r-lg:   6px;
+  --r-pill: 4px;
+
+  /* ---- Typography ---- */
+  --f-display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --f-body:    "Source Sans 3", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  --f-mono:    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- Fluid type scale ---- */
+  --t-eyebrow: clamp(0.72rem, 0.7rem + 0.1vw, 0.8rem);
+  --t-body:    clamp(0.95rem, 0.92rem + 0.2vw, 1.05rem);
+  --t-lead:    clamp(1.05rem, 1rem + 0.5vw, 1.3rem);
+  --t-h3:      clamp(1.35rem, 1.2rem + 0.9vw, 1.9rem);
+  --t-h2:      clamp(1.8rem,  1.5rem + 1.8vw, 2.9rem);
+  --t-h1:      clamp(2.4rem,  1.9rem + 3.2vw, 4.4rem);
+
+  /* ---- Spacing (8pt) ---- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  --nav-h: 68px;
+  --wrap:  1220px;
+
+  --shadow-sm: 0 1px 2px rgba(13,27,42,0.06);
+  --shadow-md: 0 6px 20px -12px rgba(13,27,42,0.22);
+
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur-base: 220ms;
+  --dur-slow: 420ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--f-body);
+  font-size: var(--t-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+h1, h2, h3, h4 { font-family: var(--f-display); color: var(--navy); line-height: 1.1; font-weight: 600; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+.wrap { width: min(var(--wrap), calc(100% - 2 * var(--s-5))); margin-inline: auto; }
+
+.eyebrow {
+  font-family: var(--f-mono);
+  font-size: var(--t-eyebrow);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--copper);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+.eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--copper); flex: none; }
+
+:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 2px; }
+
+.reveal {
+  opacity: 0; transform: translateY(14px);
+  transition: opacity var(--dur-slow) var(--ease-out), transform var(--dur-slow) var(--ease-out);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: none; }
+
+html.page-locked { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

@@ -1,0 +1,17 @@
+/* SYNTEX — Hardware. Category cards + honest partner note. */
+.hw-hero { padding: calc(var(--nav-h) + var(--s-8)) 0 var(--s-7); background: var(--paper); border-bottom: 1px solid var(--line); }
+.hw-hero h1 { font-size: var(--t-h1); margin: var(--s-3) 0 var(--s-4); max-width: 18ch; }
+.hw-hero p { font-size: var(--t-lead); color: var(--ink-soft); max-width: 62ch; margin: 0; }
+
+.hw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-4); padding: var(--s-8) 0; }
+.hw-card { padding: var(--s-6); background: var(--white); border: 1px solid var(--line); border-top: 2px solid var(--signal); border-radius: var(--r-lg); }
+.hw-n { font-family: var(--f-mono); font-size: 0.8rem; color: var(--signal-deep); }
+.hw-card h2 { font-size: 1.35rem; margin: var(--s-3) 0 var(--s-2); color: var(--navy); }
+.hw-card p { font-size: 0.9rem; color: var(--ink-soft); margin: 0 0 var(--s-4); }
+.hw-brands { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--s-2); }
+.hw-brands li { font-family: var(--f-mono); font-size: 0.75rem; color: var(--graphite); background: var(--paper-dim); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 5px 10px; }
+
+.hw-note-band { background: var(--paper-dim); border-top: 1px solid var(--line); padding: var(--s-6) 0; }
+.hw-note-band p { font-size: 0.88rem; color: var(--ink-faint); max-width: 68ch; margin: 0; }
+
+@media (max-width: 900px) { .hw-grid { grid-template-columns: 1fr; } }

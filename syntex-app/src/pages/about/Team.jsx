@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function AboutTeam(){return(<Placeholder eyebrow="About · Team" title="The people behind the systems." description="Team profiles will be published here once verified for publication." breadcrumbs={[{label:'About',to:'/about'},{label:'Team'}]} suggestions={[{to:'/about/careers',label:'Careers'},{to:'/contact',label:'Contact'}]}/>)}

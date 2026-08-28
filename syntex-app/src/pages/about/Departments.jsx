@@ -1,0 +1,2 @@
+import Placeholder from '../../components/Placeholder'
+export default function AboutDepartments(){return(<Placeholder eyebrow="About · Departments" title="How Syntex is organised." description="An overview of Syntex's delivery, engineering and support functions is being prepared." breadcrumbs={[{label:'About',to:'/about'},{label:'Departments'}]} suggestions={[{to:'/services',label:'Services'},{to:'/about',label:'About Syntex'}]}/>)}
