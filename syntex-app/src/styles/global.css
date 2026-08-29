@@ -24,8 +24,8 @@ main{
   align-items:center;
   gap:var(--space-sm);
   padding:var(--space-sm) var(--space-lg);
-  font-weight:600;
-  font-size:0.95rem;
+  font-weight:var(--type-weight-regular);
+  font-size:var(--type-size-body);
   border:none;
   border-radius:var(--radius-md);
   cursor:pointer;
@@ -103,7 +103,7 @@ main{
 }
 .cta-band h3{
   color:var(--color-paper);
-  font-size:var(--t-h2);
+  font-size:var(--type-size-subheading);
   margin:0;
   max-width:20ch;
 }
@@ -136,12 +136,12 @@ main{
 .page-header .wrap{position:relative;z-index:1}
 .page-header h1{
   color:var(--color-paper);
-  font-size:var(--t-h1);
+  font-size:var(--type-size-heading-large);
   margin:var(--space-md) 0;
 }
 .page-header .page-lead{
   color:color-mix(in srgb,var(--color-paper) 76%,transparent);
-  font-size:var(--t-lead);
+  font-size:var(--type-size-body);
   max-width:60ch;
   margin:0;
 }
@@ -159,7 +159,7 @@ main{
   gap:var(--space-xs);
   flex-wrap:wrap;
   font-family:var(--font-mono);
-  font-size:0.76rem;
+  font-size:var(--type-size-captions);
   color:color-mix(in srgb,var(--color-paper) 55%,transparent);
 }
 .breadcrumbs a{

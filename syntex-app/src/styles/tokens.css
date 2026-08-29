@@ -1,11 +1,11 @@
 :root{
-  /* === Design Tokens for Premium Enterprise ICT Brand === */
+  /* ==================== DESIGN TOKENS ==================== */
 
-  /* Color System */
-  --color-primary:   #0d1b2a;   /* Deep Navy – primary brand color */
+  /* ── Color System ── */
+  --color-primary:   #0d1b2a;   /* Deep Navy – primary brand */
   --color-secondary: #262b31;   /* Graphite – secondary/neutral */
-  --color-accent:    #b5651d;   /* Copper – accent for calls-to-action */
-  --color-surface:   #f7f7f5;   /* Paper – light surface */
+  --color-accent:    #b5651d;   /* Copper – accent */
+  --color-surface:   #f7f7f5;   /* Paper – light background */
   --color-muted:     #6a7681;   /* Ink – muted text */
   --color-text:      #14181d;   /* Ink – primary text */
   --color-border:    #d7d6ce;   /* Light border */
@@ -13,12 +13,12 @@
   --color-warning:   #e65100;   /* Orange – warning */
   --color-error:     #c62828;   /* Red – error */
 
-  /* Typography */
+  /* ── Typography ── */
   --font-display:    "Source Serif 4", Georgia, serif;
   --font-body:       "Inter","Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
   --font-mono:       "IBM Plex Mono",ui-monospace,Menlo,monospace;
 
-  /* Spacing System */
+  /* ── Spacing System ── */
   --space-xs:   4px;
   --space-sm:   8px;
   --space-md:  12px;
@@ -28,7 +28,7 @@
   --space-3xl: 48px;
   --space-4xl: 64px;
 
-  /* Border Radius System */
+  /* ── Border Radius System ── */
   --radius-xs:   6px;
   --radius-sm:  10px;
   --radius-md:  14px;
@@ -36,7 +36,7 @@
   --radius-xl:  28px;
   --radius-full: 999px;   /* pill */
 
-  /* Shadow System */
+  /* ── Shadow System ── */
   --shadow-xs:   0 1px 2px rgba(20,24,29,0.05);
   --shadow-sm:   0 2px 8px -3px rgba(20,24,29,0.10);
   --shadow-md:   0 10px 30px -12px rgba(20,24,29,0.16);
@@ -44,13 +44,13 @@
   --shadow-glass:0 8px 32px -8px rgba(13,27,42,0.18);
   --shadow-bronze:0 12px 28px -14px rgba(181,101,29,0.5);
 
-  /* Motion & Transition */
+  /* ── Motion & Transition ── */
   --ease:        cubic-bezier(0.4,0,0.2,1);
   --ease-out:    cubic-bezier(0.16,1,0.3,1);
   --dur-fast:    150ms;
   --dur-base:    240ms;
   --dur-slow:    480ms;
 
-  /* Image & Media */
+  /* ── Image & Media ── */
   --img-bg:      color-mix(in srgb,var(--paper) 5%,transparent);
 }
