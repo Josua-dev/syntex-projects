@@ -20,7 +20,7 @@
 
     background:transparent;
 
-    color:#fff;
+    color:var(--white);
 
     transition:
         background var(--dur-base) var(--ease),
@@ -30,7 +30,7 @@
 }
 
 .meganav.is-over-hero{
-    color:#fff;
+    color:var(--white);
 }
 
 
@@ -46,10 +46,10 @@
             135deg,
             rgba(255,255,255,0.18),
             rgba(255,255,255,0.06)
-        ) !important;
+        );
 
     border-bottom:
-        1px solid rgba(255,255,255,0.18) !important;
+        1px solid rgba(255,255,255,0.18);
 
     -webkit-backdrop-filter:
         blur(28px)
@@ -67,8 +67,16 @@
         inset 0 1px rgba(255,255,255,0.40),
         inset 0 -1px rgba(255,255,255,0.05);
 
-    color:#fff !important;
+    color:var(--white);
 }
+
+
+/* Brand color fix - make brand dark when scrolled for visibility on light background */
+.meganav.is-scrolled .brand,
+.meganav.is-scrolled .brand-fallback {
+    color:var(--ink);
+}
+
 
 
 /* =========================================================
@@ -95,6 +103,7 @@
 }
 
 
+
 /* =========================================================
    FALLBACK FOR NO BACKDROP FILTER
    ========================================================= */
@@ -110,11 +119,12 @@
 ){
     .meganav.is-scrolled{
         background:
-            rgba(20,30,40,0.96) !important;
+            rgba(20,30,40,0.96);
 
-        color:#fff !important;
+        color:var(--white);
     }
 }
+
 
 
 /* =========================================================
@@ -139,6 +149,7 @@
 }
 
 
+
 /* =========================================================
    BRAND
    ========================================================= */
@@ -150,7 +161,7 @@
 
     flex:none;
 
-    color:#fff !important;
+    color:var(--white);
 }
 
 .brand-logo{
@@ -165,10 +176,11 @@
     font-weight:700;
     font-size:1.18rem;
 
-    color:#fff !important;
+    color:var(--white);
 
     letter-spacing:-0.02em;
 }
+
 
 
 /* =========================================================
@@ -198,6 +210,7 @@
 }
 
 
+
 /* =========================================================
    TOP NAVIGATION LINKS
    ========================================================= */
@@ -210,7 +223,7 @@
     font-size:0.92rem;
     font-weight:500;
 
-    color:#fff !important;
+    color:var(--white);
 
     opacity:0.90;
 
@@ -237,16 +250,16 @@
 .meganav-toplink:hover,
 .meganav-toplink.is-active{
     opacity:1;
-
-    color:#fff !important;
+    color:var(--white);
 }
 
 .meganav-toplink:hover{
     background:
-        rgba(255,255,255,0.12) !important;
+        rgba(255,255,255,0.12);
 
     transform:translateY(-1px);
 }
+
 
 
 /* =========================================================
@@ -257,7 +270,6 @@
     content:"";
 
     position:absolute;
-
     left:16px;
     right:16px;
     bottom:4px;
@@ -270,7 +282,7 @@
             transparent,
             var(--copper),
             transparent
-        ) !important;
+        );
 
     border-radius:2px;
 
@@ -288,6 +300,7 @@
 }
 
 
+
 /* =========================================================
    MEGA MENU
    Solid Frosted / Dark Premium
@@ -295,7 +308,6 @@
 
 .mega-panel{
     position:absolute;
-
     top:calc(100% + 12px);
     left:0;
 
@@ -312,12 +324,12 @@
             135deg,
             rgba(31,55,78,0.98),
             rgba(25,35,48,0.99)
-        ) !important;
+        );
 
     border:
-        1px solid rgba(255,255,255,0.18) !important;
+        1px solid rgba(255,255,255,0.18);
 
-    border-radius:20px !important;
+    border-radius:20px;
 
     -webkit-backdrop-filter:
         blur(10px)
@@ -334,8 +346,9 @@
 
     overflow:hidden;
 
-    color:#fff !important;
+    color:var(--white);
 }
+
 
 
 /* =========================================================
@@ -361,17 +374,16 @@
 }
 
 
+
 /* =========================================================
    MEGA GRID
    ========================================================= */
 
 .mega-grid{
     position:relative;
-
     z-index:1;
 
     display:grid;
-
     grid-template-columns:
         1.1fr 1fr 1fr;
 
@@ -381,13 +393,15 @@
 }
 
 
+
 /* =========================================================
    MEGA MENU HEADINGS
    ========================================================= */
 
 .mega-heading h4{
-    color:#fff !important;
+    color:var(--white);
 }
+
 
 
 /* =========================================================
@@ -398,11 +412,12 @@
     font-size:0.9rem;
 
     color:
-        rgba(255,255,255,0.75) !important;
+        rgba(255,255,255,0.75);
 
     margin:
         0 0 var(--s-4);
 }
+
 
 
 /* =========================================================
@@ -411,17 +426,15 @@
 
 .mega-explore{
     display:inline-flex;
-
     align-items:center;
-
     gap:6px;
 
     font-family:var(--f-mono);
-
     font-size:0.78rem;
 
-    color:var(--copper) !important;
+    color:var(--copper);
 }
+
 
 
 /* =========================================================
@@ -430,25 +443,21 @@
 
 .mega-group-title{
     font-family:var(--f-mono);
-
     font-size:0.68rem;
-
     font-weight:600;
-
     letter-spacing:0.12em;
-
     text-transform:uppercase;
 
     color:
-        rgba(255,255,255,0.85) !important;
+        rgba(255,255,255,0.85);
 
     padding-bottom:var(--s-2);
-
     margin-bottom:var(--s-2);
 
     border-bottom:
-        1px solid rgba(255,255,255,0.20) !important;
+        1px solid rgba(255,255,255,0.20);
 }
+
 
 
 /* =========================================================
@@ -457,11 +466,10 @@
 
 .mega-group-list{
     list-style:none;
-
     margin:0;
-
     padding:0;
 }
+
 
 
 /* =========================================================
@@ -470,9 +478,7 @@
 
 .mega-link{
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
     gap:var(--s-2);
@@ -480,10 +486,9 @@
     padding:10px 12px;
 
     font-size:0.9rem;
-
     font-weight:500;
 
-    color:#fff !important;
+    color:var(--white);
 
     border-radius:var(--r-md);
 
@@ -494,14 +499,15 @@
 }
 
 .mega-link:hover{
-    color:#fff !important;
+    color:var(--white);
 
     background:
-        rgba(255,255,255,0.10) !important;
+        rgba(255,255,255,0.10);
 
     transform:
         translateX(4px);
 }
+
 
 
 /* =========================================================
@@ -511,15 +517,12 @@
 .mega-unverified,
 .mm-unverified{
     font-family:var(--f-mono);
-
     font-size:0.6rem;
-
     letter-spacing:0.05em;
-
     text-transform:uppercase;
 
     color:
-        rgba(255,255,255,0.65) !important;
+        rgba(255,255,255,0.65);
 
     border:
         1px solid rgba(255,255,255,0.20);
@@ -532,19 +535,19 @@
 }
 
 
+
 /* =========================================================
    NAVIGATION ACTIONS
    ========================================================= */
 
 .meganav-actions{
     display:flex;
-
     align-items:center;
-
     gap:var(--s-3);
 
-    color:#fff !important;
+    color:var(--white);
 }
+
 
 
 /* =========================================================
@@ -553,29 +556,26 @@
 
 .nav-search-toggle{
     display:inline-flex;
-
     align-items:center;
-
     gap:6px;
 
     padding:8px 14px;
 
     font-size:0.82rem;
 
-    color:#fff !important;
+    color:var(--white);
 
     background:
-        rgba(255,255,255,0.08) !important;
+        rgba(255,255,255,0.08);
 
     border:
-        1px solid rgba(255,255,255,0.18) !important;
+        1px solid rgba(255,255,255,0.18);
 
     border-radius:var(--r-pill);
 
     cursor:pointer;
 
     -webkit-backdrop-filter:blur(12px);
-
     backdrop-filter:blur(12px);
 
     box-shadow:
@@ -589,16 +589,17 @@
 
 .nav-search-toggle:hover{
     background:
-        rgba(255,255,255,0.14) !important;
+        rgba(255,255,255,0.14);
 
     border-color:
-        rgba(255,255,255,0.30) !important;
+        rgba(255,255,255,0.30);
 
     transform:
         translateY(-1px);
 
-    color:#fff !important;
+    color:var(--white);
 }
+
 
 
 /* =========================================================
@@ -607,12 +608,9 @@
 
 .nav-search-toggle kbd{
     font-family:var(--f-mono);
-
     font-size:0.62rem;
-
     opacity:0.7;
-
-    color:#fff !important;
+    color:var(--white);
 
     border:
         1px solid currentColor;
@@ -623,6 +621,7 @@
 }
 
 
+
 /* =========================================================
    CTA BUTTON
    ========================================================= */
@@ -631,20 +630,18 @@
     padding:11px 20px;
 
     font-size:0.85rem;
-
     font-weight:600;
 
-    color:#fff !important;
+    color:var(--white);
 
     background:
         linear-gradient(
             135deg,
             var(--copper),
             var(--copper-deep)
-        ) !important;
+        );
 
     border:none;
-
     border-radius:var(--r-pill);
 
     cursor:pointer;
@@ -663,12 +660,13 @@
     transform:
         translateY(-2px);
 
-    color:#fff !important;
+    color:var(--white);
 
     box-shadow:
         0 14px 32px rgba(0,0,0,0.24),
         inset 0 1px rgba(255,255,255,0.25);
 }
+
 
 
 /* =========================================================
@@ -679,32 +677,30 @@
     display:none;
 
     width:44px;
-
     height:44px;
 
     align-items:center;
-
     justify-content:center;
 
     background:
-        rgba(255,255,255,0.08) !important;
+        rgba(255,255,255,0.08);
 
     border:
-        1px solid rgba(255,255,255,0.18) !important;
+        1px solid rgba(255,255,255,0.18);
 
     border-radius:var(--r-md);
 
     cursor:pointer;
 
-    color:#fff !important;
+    color:var(--white);
 
     -webkit-backdrop-filter:blur(12px);
-
     backdrop-filter:blur(12px);
 
     box-shadow:
         inset 0 1px rgba(255,255,255,0.15);
 }
+
 
 
 /* =========================================================
@@ -719,10 +715,9 @@
     display:block;
 
     width:18px;
-
     height:2px;
 
-    background:#fff !important;
+    background:var(--white);
 
     border-radius:2px;
 
@@ -737,15 +732,14 @@
 
 .nav-burger span::before{
     position:absolute;
-
     top:-6px;
 }
 
 .nav-burger span::after{
     position:absolute;
-
     top:6px;
 }
+
 
 
 /* =========================================================
@@ -753,22 +747,21 @@
    ========================================================= */
 
 .nav-burger[aria-expanded="true"] span{
-    background:transparent !important;
+    background:transparent;
 }
 
 .nav-burger[aria-expanded="true"] span::before{
     top:0;
-
     transform:
         rotate(45deg);
 }
 
 .nav-burger[aria-expanded="true"] span::after{
     top:0;
-
     transform:
         rotate(-45deg);
 }
+
 
 
 /* =========================================================
@@ -777,7 +770,6 @@
 
 .mobile-menu{
     position:fixed;
-
     inset:
         var(--nav-h)
         0
@@ -798,9 +790,9 @@
             135deg,
             rgba(25,35,48,0.98),
             rgba(31,55,78,0.98)
-        ) !important;
+        );
 
-    color:#fff !important;
+    color:var(--white);
 
     -webkit-backdrop-filter:
         blur(20px)
@@ -810,6 +802,7 @@
         blur(20px)
         saturate(140%);
 }
+
 
 
 /* =========================================================
@@ -827,11 +820,12 @@
 ){
     .mobile-menu{
         background:
-            #1f374e !important;
+            #1f374e;
 
-        color:#fff !important;
+        color:var(--white);
     }
 }
+
 
 
 /* =========================================================
@@ -845,37 +839,31 @@
 
 .mm-group-link{
     flex:1;
-
     padding:16px 4px;
 
     font-family:var(--f-display);
-
     font-size:1.25rem;
-
     font-weight:600;
 
-    color:#fff !important;
+    color:var(--white);
 }
 
 .mm-arrow{
     width:44px;
-
     height:44px;
 
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
 
     background:none;
-
     border:none;
 
-    color:#fff !important;
+    color:var(--white);
 
     cursor:pointer;
 }
+
 
 
 /* =========================================================
@@ -891,15 +879,12 @@
 
 .mm-sub-title{
     font-family:var(--f-mono);
-
     font-size:0.66rem;
-
     letter-spacing:0.1em;
-
     text-transform:uppercase;
 
     color:
-        rgba(255,255,255,0.60) !important;
+        rgba(255,255,255,0.60);
 
     margin:
         var(--s-3)
@@ -909,12 +894,11 @@
 
 .mm-sub-link{
     display:block;
-
     padding:11px 4px;
 
     font-size:0.98rem;
 
-    color:#fff !important;
+    color:var(--white);
 
     transition:
         opacity .2s ease,
@@ -922,13 +906,12 @@
 }
 
 .mm-sub-link:hover{
-    color:#fff !important;
-
+    color:var(--white);
     opacity:0.8;
-
     transform:
         translateX(4px);
 }
+
 
 
 /* =========================================================
@@ -937,11 +920,10 @@
 
 .mm-cta{
     display:inline-block;
-
     margin-top:var(--s-5);
-
-    color:#fff !important;
+    color:var(--white);
 }
+
 
 
 /* =========================================================
@@ -960,12 +942,12 @@
 }
 
 
+
 /* =========================================================
    RESPONSIVE
    ========================================================= */
 
 @media (max-width:1024px){
-
     .meganav-navigable{
         display:none;
     }
@@ -973,39 +955,48 @@
     .nav-burger{
         display:inline-flex;
     }
-
 }
 
 
+
 /* =========================================================
-   FORCE ALL NAVIGATION TEXT WHITE
-   Final override
+   DARK TEXT WHEN SCROLLED (for light backgrounds)
    ========================================================= */
 
-.meganav,
 .meganav.is-scrolled,
-.meganav-toplink,
-.meganav-toplink:hover,
-.meganav-toplink.is-active,
-.mega-panel,
-.mega-heading h4,
-.mega-lede p,
-.mega-group-title,
-.mega-link,
-.mega-link:hover,
-.mega-explore,
-.mega-unverified,
-.mm-unverified,
-.meganav-actions,
-.nav-search-toggle,
-.nav-search-toggle:hover,
-.nav-search-toggle kbd,
-.nav-burger,
-.mm-group-link,
-.mm-arrow,
-.mm-sub-title,
-.mm-sub-link,
-.mm-sub-link:hover,
-.mm-cta{
-    color:#fff !important;
+.meganav.is-scrolled .brand,
+.meganav.is-scrolled .brand-fallback,
+.meganav.is-scrolled .meganav-toplink,
+.meganav.is-scrolled .meganav-toplink:hover,
+.meganav.is-scrolled .meganav-toplink.is-active,
+.meganav.is-scrolled .meganav-actions,
+.meganav.is-scrolled .nav-search-toggle,
+.meganav.is-scrolled .nav-search-toggle:hover,
+.meganav.is-scrolled .nav-search-toggle kbd,
+.meganav.is-scrolled .mm-group-link,
+.meganav.is-scrolled .mm-arrow,
+.meganav.is-scrolled .mm-sub-title,
+.meganav.is-scrolled .mm-sub-link,
+.meganav.is-scrolled .mm-sub-link:hover,
+.meganav.is-scrolled .mm-cta{
+    color:var(--ink);
+}
+
+/* Keep CTA button white for contrast on copper background */
+.meganav.is-scrolled .nav-cta-btn,
+.meganav.is-scrolled .nav-cta-btn:hover{
+    color:var(--white);
+}
+
+/* Keep mega-panel and its contents white on dark dropdown */
+.meganav.is-scrolled .mega-panel,
+.meganav.is-scrolled .mega-panel::before,
+.meganav.is-scrolled .mega-heading h4,
+.meganav.is-scrolled .mega-lede p,
+.meganav.is-scrolled .mega-group-title,
+.meganav.is-scrolled .mega-link,
+.meganav.is-scrolled .mega-link:hover,
+.meganav.is-scrolled .mega-explore,
+.meganav.is-scrolled .mega-unverified{
+    color:var(--white);
 }
