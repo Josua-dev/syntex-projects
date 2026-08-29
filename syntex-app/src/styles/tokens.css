@@ -53,4 +53,8 @@
 
   /* ── Image & Media ── */
   --img-bg:      color-mix(in srgb,var(--paper) 5%,transparent);
+
+  /* ── Additional Color Tokens ── */
+  --color-accent-dark:   #8f4e14;   /* Darker accent for hover states */
+  --color-primary-dark:  #1c3350;   /* Darker primary for hover states */
 }
