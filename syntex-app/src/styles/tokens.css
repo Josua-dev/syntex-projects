@@ -58,4 +58,68 @@
   /* ── Additional Color Tokens ── */
   --color-accent-dark:   #8f4e14;   /* Darker accent for hover states */
   --color-primary-dark:  #1c3350;   /* Darker primary for hover states */
+  --color-paper:         #ffffff;
+  --color-white:         #ffffff;
+  --color-ink:           #14181d;
+  --color-graphite:      #262b31;
+
+  /* ==================== SHORT-FORM ALIASES ====================
+     Aliases so pages.css and component CSS can use the original
+     concise token names (--navy, --paper, --s-3, --r-md, etc.)
+     that were defined before the long-form rename. */
+  /* Color */
+  --navy:        var(--color-primary);
+  --navy-700:    var(--color-primary-dark);
+  --graphite:    var(--color-graphite);
+  --ink:         var(--color-ink);
+  --ink-soft:    var(--color-muted);
+  --ink-faint:   color-mix(in srgb, var(--color-muted) 70%, transparent);
+  --paper:       var(--color-paper);
+  --paper-dim:   color-mix(in srgb, var(--color-primary) 4%, var(--color-paper));
+  --white:       var(--color-white);
+  --copper:      var(--color-accent);
+  --copper-deep: var(--color-accent-dark);
+  --copper-soft: color-mix(in srgb, var(--color-accent) 60%, var(--color-paper));
+  --signal:      var(--color-accent);
+  --signal-deep: var(--color-accent-dark);
+  --line:        color-mix(in srgb, var(--color-primary) 10%, var(--color-paper));
+  --line-on-dark:color-mix(in srgb, var(--color-paper) 12%, transparent);
+  --border:      var(--color-border);
+  /* Spacing */
+  --s-1:  4px;
+  --s-2:  8px;
+  --s-3:  12px;
+  --s-4:  16px;
+  --s-5:  20px;
+  --s-6:  24px;
+  --s-7:  32px;
+  --s-8:  40px;
+  --s-9:  56px;
+  --s-10: 80px;
+  /* Radius */
+  --r-xs:    var(--radius-xs);
+  --r-sm:    var(--radius-sm);
+  --r-md:    var(--radius-md);
+  --r-lg:    var(--radius-lg);
+  --r-xl:    var(--radius-xl);
+  --r-pill:  var(--radius-pill);
+  /* Typography */
+  --f-display: var(--font-display);
+  --f-body:    var(--font-body);
+  --f-mono:    var(--font-mono);
+  --t-eyebrow: 0.72rem;
+  --t-h1:      clamp(2.2rem, 1.6rem + 2.6vw, 3.6rem);
+  --t-h2:      clamp(1.6rem, 1.2rem + 1.6vw, 2.2rem);
+  --t-h3:      clamp(1.2rem, 1.05rem + 0.7vw, 1.5rem);
+  --t-lead:    clamp(1.05rem, 0.98rem + 0.3vw, 1.2rem);
+  --t-body:    1rem;
+  /* Layout */
+  --wrap:    1240px;
+  --nav-h:   72px;
+  /* Glass */
+  --glass-light:  color-mix(in srgb, var(--color-paper) 70%, transparent);
+  --glass-dark:   color-mix(in srgb, var(--color-primary) 60%, transparent);
+  --glass-border: color-mix(in srgb, var(--color-paper) 40%, transparent);
+  --glass-border-dk: color-mix(in srgb, var(--color-paper) 16%, transparent);
+  --glass-blur:   14px;
 }

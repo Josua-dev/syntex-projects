@@ -21,8 +21,8 @@
 
 /* Copy block */
 .hero-copy{
-  max-width:760px;
-  margin-inline:auto;
+  max-width:640px;
+  margin-inline:0;
   display:flex;
   flex-direction:column;
   gap:var(--space-md);
@@ -139,7 +139,7 @@
 }
 .home-caps-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
   gap:var(--space-md);
 }
 .home-cap{
@@ -204,7 +204,7 @@
 }
 .home-ind-strip{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:var(--space-md);
 }
 .home-ind{
@@ -368,7 +368,7 @@
 .home-partner-wall{
   display:flex;
   flex-wrap:wrap;
-  gap:var(--space-md);
+  gap:var(--space-sm);
 }
 .home-partner{
   padding:10px 18px;

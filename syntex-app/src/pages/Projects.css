@@ -1,101 +1,36 @@
-/* ==== Projects Page Premium Styling ==== */
+/* ==== Projects Page — page-level chrome only ====
+   The .proj-card, .proj-grid, .proj-meta, .card-go styles live in pages.css.
+   This file only owns the page header chrome. */
 
 .page-header{
-  padding:calc(var(--nav-h) + var(--space-lg)) 0 var(--space-xl);
+  padding:calc(var(--nav-h) + var(--s-8)) 0 var(--s-7);
+  background:linear-gradient(180deg,var(--paper) 0%,var(--paper-dim) 100%);
+  border-bottom:1px solid var(--line);
 }
 .page-header .wrap{
-  max-width:760px;
+  max-width:880px;
   margin-inline:auto;
 }
 .page-header .eyebrow{
-  color:var(--color-accent);
-  font-family:var(--font-mono);
+  color:var(--copper);
+  font-family:var(--f-mono);
   font-size:var(--t-eyebrow);
   letter-spacing:0.14em;
   text-transform:uppercase;
 }
 .page-header h1{
-  font-family:var(--font-display);
+  font-family:var(--f-display);
   font-size:var(--t-h1);
-  color:var(--color-primary);
-  margin:var(--space-md) 0 var(--space-sm);
-  line-height:1.04;
+  color:var(--navy);
+  margin:var(--s-3) 0 var(--s-4);
+  line-height:1.05;
   letter-spacing:-0.02em;
   max-width:18ch;
 }
 .page-lead{
   font-size:var(--t-lead);
-  color:color-mix(in srgb,var(--color-paper) 84%,transparent);
-  max-width:56ch;
-  margin:0 0 var(--space-md);
+  color:var(--ink-soft);
+  max-width:60ch;
+  margin:0 0 var(--s-4);
+  line-height:1.55;
 }
-
-/* ==== Project Card ==== */
-.proj-card{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:var(--radius-lg);
-  box-shadow:var(--shadow-sm);
-  transition:transform var(--dur-fast) var(--ease-out),box-shadow var(--dur-fast) var(--ease-out);
-  overflow:hidden;
-}
-.proj-card:hover{
-  transform:translateY(-4px);
-  box-shadow:var(--shadow-lg);
-}
-.proj-card-top{
-  padding:var(--space-md);
-  border-bottom:1px solid var(--line);
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-xs);
-}
-.proj-category{
-  font-family:var(--font-mono);
-  font-size:0.68rem;
-  text-transform:uppercase;
-  color:color-mix(in srgb,var(--color-paper) 55%,transparent);
-}
-.proj-status{
-  font-family:var(--font-mono);
-  font-size:0.68rem;
-  color:color-mix(in srgb,var(--color-paper) 55%,transparent);
-}
-.proj-card h3{
-  font-family:var(--font-display);
-  font-size:var(--t-h2);
-  color:var(--color-primary);
-  margin:var(--space-sm) 0;
-}
-.proj-overview{
-  font-size:var(--t-lead);
-  color:color-mix(in srgb,var(--color-paper) 66%,transparent);
-  margin:var(--space-sm) 0;
-}
-.proj-meta{
-  font-family:var(--font-mono);
-  font-size:0.64rem;
-  color:color-mix(in srgb,var(--color-paper) 50%,transparent);
-}
-.proj-meta span{
-  margin-right:var(--space-xs);
-}
-.card-go{
-  font-family:var(--font-mono);
-  font-size:0.78rem;
-  color:var(--signal-deep);
-  transition:transform var(--dur-fast) var(--ease);
-}
-.card-go:hover{
-  transform:translateX(3px);
-  color:var(--color-accent-dark, #8f4e14);
-}
-
-/* Project grid */
-.proj-grid{
-  display:flex;
-  flex-wrap:wrap;
-  gap:var(--space-md);
-}
-
-/* ==== End Projects Page ==== */

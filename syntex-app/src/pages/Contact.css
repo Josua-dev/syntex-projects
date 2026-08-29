@@ -1,119 +1,41 @@
-/* ==== Contact Page Premium Styling ==== */
+/* ==== Contact Page — hero chrome only ====
+   The .cf-*, .contact-routes, .cr-*, .contact-grid styles live in pages.css.
+   This file only owns the navy hero. */
 
 .contact-hero{
   position:relative;
-  min-height:clamp(560px,78vh,760px);
-  display:flex;
-  align-items:center;
-  color:var(--color-paper);
+  background:var(--navy);
+  color:var(--paper);
+  padding:calc(var(--nav-h) + var(--s-8)) 0 var(--s-8);
+  border-bottom:2px solid var(--copper);
   overflow:hidden;
-  padding:calc(var(--nav-h) + var(--space-lg)) 0 var(--space-xl);
 }
-.contact-hero .wrap{
-  max-width:760px;
-  margin-inline:auto;
+.contact-hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(color-mix(in srgb,var(--paper) 6%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,var(--paper) 6%,transparent) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(120% 80% at 80% 0%,#000 30%,transparent 100%);
+  pointer-events:none;
 }
+.contact-hero .wrap{position:relative;z-index:1;max-width:980px;margin-inline:auto}
+.contact-hero .eyebrow{color:var(--copper)}
 .contact-hero h1{
-  font-family:var(--font-display);
+  color:var(--white);
+  font-family:var(--f-display);
   font-size:var(--t-h1);
-  color:var(--color-paper);
-  margin:var(--space-md) 0 var(--space-sm);
-  line-height:1.04;
+  margin:var(--s-3) 0 var(--s-4);
+  line-height:1.05;
   letter-spacing:-0.02em;
   max-width:18ch;
 }
 .contact-hero p{
+  color:color-mix(in srgb,var(--paper) 78%,transparent);
   font-size:var(--t-lead);
-  color:color-mix(in srgb,var(--color-paper) 84%,transparent);
-  max-width:56ch;
-  margin:0 0 var(--space-md);
+  max-width:58ch;
+  margin:0 0 var(--s-4);
+  line-height:1.55;
 }
-
-/* ==== Contact Form ==== */
-.contact-grid{
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-xl);
-  margin-top:var(--space-xl);
-}
-.contact-form{
-  background:var(--white);
-  border:1px solid var(--line);
-  border-radius:var(--radius-lg);
-  padding:var(--space-lg);
-  box-shadow:var(--shadow-sm);
-}
-.cf-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:var(--space-md);
-}
-.cf-field{
-  flex:1 1 300px;
-}
-.cf-label{
-  font-family:var(--font-mono);
-  font-size:0.85rem;
-  color:color-mix(in srgb,var(--color-paper) 65%,transparent);
-  margin-bottom:var(--space-xs);
-}
-.cf-input{
-  width:100%;
-  padding:var(--space-xs) var(--space-xs);
-  border:1px solid var(--color-border);
-  border-radius:var(--radius-md);
-  background:var(--color-paper);
-  color:var(--color-text);
-  font-family:var(--font-body);
-  font-size:var(--t-body);
-  transition:border-color var(--dur-fast) var(--ease), box-shadow var(--dur-fast) var(--ease);
-}
-.cf-input:focus{
-  outline:none;
-  border-color:var(--color-accent);
-  box-shadow:0 0 0 2px rgba(var(--color-accent),0.2);
-}
-.cf-input::placeholder{
-  color:color-mix(in srgb,var(--color-text) 60%,transparent);
-}
-.cf-area{
-  min-height:120px;
-  resize:vertical;
-}
-.cf-area:focus{
-  outline:none;
-  border-color:var(--color-accent);
-  box-shadow:0 0 0 2px rgba(var(--color-accent),0.2);
-}
-.cf-area::placeholder{
-  color:color-mix(in srgb,var(--color-text) 60%,transparent);
-}
-.cf-status{
-  margin-top:var(--space-xs);
-  color:color-mix(in srgb,var(--color-success) 80%,transparent);
-  font-weight:500;
-}
-.contact-routes{
-  display:flex;
-  flex-direction:column;
-  gap:var(--space-md);
-  margin-top:var(--space-md);
-}
-.cr-block{
-  background:var(--glass-light);
-  border:1px solid var(--glass-border);
-  border-radius:var(--radius-md);
-  padding:var(--space-xs) var(--space-xs);
-  color:var(--color-text);
-  font-family:var(--font-mono);
-  font-size:0.85rem;
-}
-.cr-block a{
-  color:var(--color-accent);
-  text-decoration:none;
-}
-.contact-map{
-  margin-top:var(--space-xl);
-}
-
-/* ==== End Contact Page ==== */
