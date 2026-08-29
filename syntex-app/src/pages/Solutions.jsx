@@ -16,7 +16,7 @@ function Row({sol,index}){
 }
 export default function Solutions(){
   return(<><section className="sol-hero"><div className="wrap sol-hero-grid"><div><span className="eyebrow">Solutions</span><h1>How Syntex solves specific business and technical problems.</h1></div><p className="sol-hero-lead">Each solution below is a problem-lens over the systems we design, integrate and support. Every capability shown traces to work Syntex actually delivers.</p></div></section>
-    {solutions.map((sol,i)=><a key={sol.slug} href={`#${sol.slug}`} className="sol-chip"><span className="sol-chip-n">{String(i+1).padStart(2,'0')}</span>{sol.title}</a>)}</section>
+    <section className="wrap sol-chips">{solutions.map((sol,i)=><a key={sol.slug} href={`#${sol.slug}`} className="sol-chip"><span className="sol-chip-n">{String(i+1).padStart(2,'0')}</span>{sol.title}</a>)}</section>
     {LENSES.map(lens=><section key={lens} className="wrap sol-group"><div className="sol-group-head"><span className="rule"/><h2>{lens}</h2></div>{solutions.filter(s=>s.lens===lens).map((sol,i)=><div id={sol.slug} key={sol.slug}><Row sol={sol} index={i}/></div>)}</section>)}
     <CtaBand heading="Have a systems problem to solve?" primaryLabel="Talk to Syntex" primary="/contact"/></>)
   }
