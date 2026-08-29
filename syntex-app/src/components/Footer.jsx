@@ -5,7 +5,7 @@ export default function Footer(){
   const year=new Date().getFullYear()
   return(<footer className="site-footer"><div className="wrap foot-inner">
     <div className="foot-brand">
-      <Link to="/" className="foot-logo" aria-label="Syntex Technologies — home"><img src="/images/syntex-mark.png" alt="" width="44" height="44"/><span className="foot-wordmark">Syntex</span></Link>
+      <Link to="/" className="foot-logo" aria-label="Syntex Technologies — home"><img src="/images/syntex-mark.png" alt="" width="44" height="44" loading="lazy"/><span className="foot-wordmark">Syntex</span></Link>
       <p>{identity.legal}, a Namibian ICT systems integrator incorporated in {identity.incorporated}, delivering enterprise, security, utility and consulting systems from {identity.region}, {identity.country}.</p>
       <p className="foot-parent">Synergy to Excel.</p>
     </div>
