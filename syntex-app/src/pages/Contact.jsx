@@ -2,6 +2,7 @@ import { useState } from 'react'
 import FindUsMap from '../components/FindUsMap'
 import { identity } from '../data/site'
 import './pages.css'
+import './Contact.css'  // Premium Contact page styling
 export default function Contact(){
   const [status,setStatus]=useState(null)
   const onSubmit=e=>{e.preventDefault();const f=e.currentTarget;const name=f.name.value.trim(),org=f.org.value.trim(),email=f.email.value.trim(),topic=f.topic.value,message=f.message.value.trim();if(!name||!email||!message){setStatus('Please complete your name, email and a short message.');return}const subject=encodeURIComponent(`[${topic}] Enquiry from ${name}${org?` — ${org}`:''}`);const body=encodeURIComponent(`Name: ${name}\nOrganisation: ${org}\nEmail: ${email}\nTopic: ${topic}\n\n${message}`);window.location.href=`mailto:${identity.emailSales}?subject=${subject}&body=${body}`;setStatus('Opening your email client to send this to the Syntex team…')}
@@ -12,5 +13,5 @@ export default function Contact(){
     <div className="cf-field"><label htmlFor="cf-message">How can we help?<span aria-hidden="true"> *</span></label><textarea id="cf-message" name="message" rows="6" required placeholder="The system, environment or problem you'd like to discuss…"/></div>
     <button type="submit" className="btn btn-primary">Send to Syntex</button><p className="cf-status" role="status" aria-live="polite">{status}</p></form>
     <aside className="contact-routes glass"><div className="cr-block"><span className="cr-label">Sales</span><a href={`mailto:${identity.emailSales}`}>{identity.emailSales}</a></div><div className="cr-block"><span className="cr-label">Support</span><a href={`mailto:${identity.emailSupport}`}>{identity.emailSupport}</a></div><div className="cr-block"><span className="cr-label">Phone</span><a href={`tel:${identity.phoneHref}`}>{identity.phone}</a></div><div className="cr-block"><span className="cr-label">Fax</span><span>{identity.fax}</span></div></aside></section>
-  <section className="wrap contact-map" id="locations"><FindUsMap/></section></>)
-}
+    <section className="wrap contact-map" id="locations"><FindUsMap/></section></>)
+  }

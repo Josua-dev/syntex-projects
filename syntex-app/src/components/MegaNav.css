@@ -1,969 +1,358 @@
 /* =========================================================
-   PREMIUM NAVIGATION
-   Cleaned + Combined Version
-   White Navigation Text
+   PREMIUM ENTERPRISE NAVIGATION
+   Clean, readable, and purposeful – minimal glass,
+   solid surfaces where needed, subtle motion.
    ========================================================= */
 
-
-/* =========================================================
-   NAVBAR
-   ========================================================= */
-
+/* ---------------------- NAVBAR CONTAINER ---------------------- */
 .meganav{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    z-index:120;
-
-    padding:var(--s-3) 0;
-
-    background:transparent;
-
-    color:var(--white);
-
-    transition:
-        background var(--dur-base) var(--ease),
-        box-shadow var(--dur-base) var(--ease),
-        padding var(--dur-base) var(--ease),
-        color var(--dur-base) var(--ease);
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:120;
+  padding:var(--space-sm) 0;
+  transition:
+    background var(--dur-base) var(--ease),
+    box-shadow var(--dur-base) var(--ease),
+    color var(--dur-base) var(--ease);
 }
 
-.meganav.is-over-hero{
-    color:var(--white);
-}
-
-
-/* =========================================================
-   SCROLLED NAVBAR
-   ========================================================= */
-
+/* ---------------------- SCROLLED / SOLID STATE ---------------------- */
 .meganav.is-scrolled{
-    padding:8px 0;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.18),
-            rgba(255,255,255,0.06)
-        );
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.18);
-
-    -webkit-backdrop-filter:
-        blur(28px)
-        saturate(220%)
-        brightness(1.08);
-
-    backdrop-filter:
-        blur(28px)
-        saturate(220%)
-        brightness(1.08);
-
-    box-shadow:
-        0 12px 40px rgba(0,0,0,0.12),
-        0 2px 12px rgba(0,0,0,0.08),
-        inset 0 1px rgba(255,255,255,0.40),
-        inset 0 -1px rgba(255,255,255,0.05);
-
-    color:var(--white);
+  padding:var(--space-md) 0;
+  background:var(--color-primary);
+  color:var(--color-paper);
+  box-shadow:var(--shadow-sm);
 }
 
-
-/* Brand color fix - make brand dark when scrolled for visibility on light background */
-.meganav.is-scrolled .brand,
-.meganav.is-scrolled .brand-fallback {
-    color:var(--ink);
+/* ---------------------- OVER HERO (transparent) ---------------------- */
+.meganav.is-over-hero{
+  background:transparent;
+  color:var(--color-paper);
 }
 
-
-
-/* =========================================================
-   GLASS SHINE
-   ========================================================= */
-
-.meganav.is-scrolled::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            circle at 50% 0%,
-            rgba(255,255,255,0.30),
-            rgba(255,255,255,0.08) 35%,
-            transparent 75%
-        );
-
-    z-index:-1;
-}
-
-
-
-/* =========================================================
-   FALLBACK FOR NO BACKDROP FILTER
-   ========================================================= */
-
-@supports not (
-    (
-        -webkit-backdrop-filter:blur(1px)
-    )
-    or
-    (
-        backdrop-filter:blur(1px)
-    )
-){
-    .meganav.is-scrolled{
-        background:
-            rgba(20,30,40,0.96);
-
-        color:var(--white);
-    }
-}
-
-
-
-/* =========================================================
-   NAVBAR INNER
-   ========================================================= */
-
+/* ---------------------- NAVBAR INNER ---------------------- */
 .meganav-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:var(--s-6);
-
-    width:min(
-        var(--wrap),
-        calc(100% - 2 * var(--s-5))
-    );
-
-    margin-inline:auto;
-
-    height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-md);
+  width:min(var(--wrap),calc(100% - 2*var(--space-sm)));
+  margin-inline:auto;
 }
 
-
-
-/* =========================================================
-   BRAND
-   ========================================================= */
-
+/* ---------------------- BRAND LOGO ---------------------- */
 .brand{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    flex:none;
-
-    color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:var(--space-xs);
+  color:var(--color-paper);
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.18rem;
+  letter-spacing:-0.02em;
 }
-
 .brand-logo{
-    height:40px;
-    width:auto;
-
-    object-fit:contain;
+  height:40px;
+  width:auto;
+  object-fit:contain;
 }
-
 .brand-fallback{
-    font-family:var(--f-display);
-    font-weight:700;
-    font-size:1.18rem;
-
-    color:var(--white);
-
-    letter-spacing:-0.02em;
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:1.18rem;
+  color:var(--color-paper);
 }
 
-
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
+/* ---------------------- NAVIGATION LINKS ---------------------- */
 .meganav-navigable{
-    display:flex;
-    align-items:center;
-    gap:var(--s-4);
+  display:flex;
+  align-items:center;
+  gap:var(--space-xs);
 }
-
 .meganav-links{
-    display:flex;
-    align-items:center;
-    gap:2px;
-
-    list-style:none;
-
-    margin:0;
-    padding:0;
+  display:flex;
+  align-items:center;
+  gap:2px;
+  list-style:none;
+  margin:0;
+  padding:0;
 }
-
-.meganav-item,
-.meganav-item-inner{
-    position:relative;
-}
-
-
-
-/* =========================================================
-   TOP NAVIGATION LINKS
-   ========================================================= */
+.meganav-item{position:relative;}
 
 .meganav-toplink{
-    position:relative;
-
-    padding:10px 16px;
-
-    font-size:0.92rem;
-    font-weight:500;
-
-    color:var(--white);
-
-    opacity:0.90;
-
-    background:
-        linear-gradient(
-            rgba(255,255,255,0.04),
-            rgba(255,255,255,0.01)
-        );
-
-    border:none;
-
-    border-radius:var(--r-pill);
-
-    cursor:pointer;
-
-    white-space:nowrap;
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        opacity .2s ease;
+  position:relative;
+  padding:var(--space-xs) var(--space-sm);
+  font-size:0.92rem;
+  font-weight:500;
+  color:var(--color-paper);
+  background:transparent;
+  border:none;
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  opacity:0.90;
+  transition:
+    color var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease);
 }
-
 .meganav-toplink:hover,
 .meganav-toplink.is-active{
-    opacity:1;
-    color:var(--white);
+  opacity:1;
+  color:var(--color-paper);
+  transform:translateY(-1px);
 }
 
-.meganav-toplink:hover{
-    background:
-        rgba(255,255,255,0.12);
-
-    transform:translateY(-1px);
-}
-
-
-
-/* =========================================================
-   NAVIGATION INDICATOR
-   ========================================================= */
-
+/* Underline accent on hover/active */
 .meganav-toplink::after{
-    content:"";
-
-    position:absolute;
-    left:16px;
-    right:16px;
-    bottom:4px;
-
-    height:2px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--copper),
-            transparent
-        );
-
-    border-radius:2px;
-
-    transform:scaleX(0);
-
-    transform-origin:center;
-
-    transition:
-        transform var(--dur-base) var(--ease-out);
+  content:"";
+  position:absolute;
+  left:16px; right:16px; bottom:4px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,var(--color-accent),transparent);
+  border-radius:2px;
+  transform:scaleX(0);
+  transform-origin:center;
+  transition:transform var(--dur-fast) var(--ease);
 }
+.meganav-toplink:hover::after,
+.meganav-toplink.is-active::after{transform:scaleX(.85);}
 
-.meganav-toplink.is-active::after,
-.meganav-toplink:hover::after{
-    transform:scaleX(.85);
-}
-
-
-
-/* =========================================================
-   MEGA MENU
-   Solid Frosted / Dark Premium
-   ========================================================= */
-
-.mega-panel{
-    position:absolute;
-    top:calc(100% + 12px);
-    left:0;
-
-    width:min(760px,92vw);
-
-    /*
-       Solid dark surface.
-       This prevents the dropdown from looking
-       overly transparent/glassy.
-    */
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(31,55,78,0.98),
-            rgba(25,35,48,0.99)
-        );
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-radius:20px;
-
-    -webkit-backdrop-filter:
-        blur(10px)
-        saturate(120%);
-
-    backdrop-filter:
-        blur(10px)
-        saturate(120%);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.35),
-        0 4px 16px rgba(0,0,0,0.20),
-        inset 0 1px rgba(255,255,255,0.14);
-
-    overflow:hidden;
-
-    color:var(--white);
-}
-
-
-
-/* =========================================================
-   MEGA MENU SUBTLE HIGHLIGHT
-   ========================================================= */
-
-.mega-panel::before{
-    content:"";
-
-    position:absolute;
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.07),
-            transparent 45%
-        );
-
-    opacity:.6;
-}
-
-
-
-/* =========================================================
-   MEGA GRID
-   ========================================================= */
-
-.mega-grid{
-    position:relative;
-    z-index:1;
-
-    display:grid;
-    grid-template-columns:
-        1.1fr 1fr 1fr;
-
-    gap:var(--s-6);
-
-    padding:var(--s-6);
-}
-
-
-
-/* =========================================================
-   MEGA MENU HEADINGS
-   ========================================================= */
-
-.mega-heading h4{
-    color:var(--white);
-}
-
-
-
-/* =========================================================
-   MEGA MENU DESCRIPTION
-   ========================================================= */
-
-.mega-lede p{
-    font-size:0.9rem;
-
-    color:
-        rgba(255,255,255,0.75);
-
-    margin:
-        0 0 var(--s-4);
-}
-
-
-
-/* =========================================================
-   EXPLORE LINK
-   ========================================================= */
-
-.mega-explore{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-
-    font-family:var(--f-mono);
-    font-size:0.78rem;
-
-    color:var(--copper);
-}
-
-
-
-/* =========================================================
-   MEGA GROUP TITLE
-   ========================================================= */
-
-.mega-group-title{
-    font-family:var(--f-mono);
-    font-size:0.68rem;
-    font-weight:600;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-
-    color:
-        rgba(255,255,255,0.85);
-
-    padding-bottom:var(--s-2);
-    margin-bottom:var(--s-2);
-
-    border-bottom:
-        1px solid rgba(255,255,255,0.20);
-}
-
-
-
-/* =========================================================
-   MEGA GROUP LIST
-   ========================================================= */
-
-.mega-group-list{
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-
-
-/* =========================================================
-   MEGA LINKS
-   ========================================================= */
-
-.mega-link{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:var(--s-2);
-
-    padding:10px 12px;
-
-    font-size:0.9rem;
-    font-weight:500;
-
-    color:var(--white);
-
-    border-radius:var(--r-md);
-
-    transition:
-        background .2s ease,
-        transform .2s ease,
-        color .2s ease;
-}
-
-.mega-link:hover{
-    color:var(--white);
-
-    background:
-        rgba(255,255,255,0.10);
-
-    transform:
-        translateX(4px);
-}
-
-
-
-/* =========================================================
-   UNVERIFIED LABELS
-   ========================================================= */
-
-.mega-unverified,
-.mm-unverified{
-    font-family:var(--f-mono);
-    font-size:0.6rem;
-    letter-spacing:0.05em;
-    text-transform:uppercase;
-
-    color:
-        rgba(255,255,255,0.65);
-
-    border:
-        1px solid rgba(255,255,255,0.20);
-
-    border-radius:var(--r-pill);
-
-    padding:2px 8px;
-
-    margin-left:8px;
-}
-
-
-
-/* =========================================================
-   NAVIGATION ACTIONS
-   ========================================================= */
-
+/* ---------------------- NAV ACTIONS ---------------------- */
 .meganav-actions{
-    display:flex;
-    align-items:center;
-    gap:var(--s-3);
-
-    color:var(--white);
+  display:flex;
+  align-items:center;
+  gap:var(--space-xs);
+  color:var(--color-paper);
 }
-
-
-
-/* =========================================================
-   SEARCH BUTTON
-   ========================================================= */
-
 .nav-search-toggle{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-
-    padding:8px 14px;
-
-    font-size:0.82rem;
-
-    color:var(--white);
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-radius:var(--r-pill);
-
-    cursor:pointer;
-
-    -webkit-backdrop-filter:blur(12px);
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-        inset 0 1px rgba(255,255,255,0.18);
-
-    transition:
-        background .2s ease,
-        border-color .2s ease,
-        transform .2s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:var(--space-xs) var(--space-sm);
+  font-size:0.82rem;
+  color:var(--color-paper);
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
 }
-
 .nav-search-toggle:hover{
-    background:
-        rgba(255,255,255,0.14);
-
-    border-color:
-        rgba(255,255,255,0.30);
-
-    transform:
-        translateY(-1px);
-
-    color:var(--white);
+  background:rgba(255,255,255,0.14);
+  border-color:rgba(255,255,255,0.30);
+  transform:translateY(-1px);
 }
-
-
-
-/* =========================================================
-   SEARCH KEYBOARD SHORTCUT
-   ========================================================= */
-
-.nav-search-toggle kbd{
-    font-family:var(--f-mono);
-    font-size:0.62rem;
-    opacity:0.7;
-    color:var(--white);
-
-    border:
-        1px solid currentColor;
-
-    border-radius:4px;
-
-    padding:1px 5px;
-}
-
-
-
-/* =========================================================
-   CTA BUTTON
-   ========================================================= */
-
 .nav-cta-btn{
-    padding:11px 20px;
-
-    font-size:0.85rem;
-    font-weight:600;
-
-    color:var(--white);
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--copper),
-            var(--copper-deep)
-        );
-
-    border:none;
-    border-radius:var(--r-pill);
-
-    cursor:pointer;
-
-    box-shadow:
-        0 8px 24px rgba(0,0,0,0.18),
-        inset 0 1px rgba(255,255,255,0.20);
-
-    transition:
-        background .2s ease,
-        transform .2s ease,
-        box-shadow .2s ease;
+  padding:var(--space-xs) var(--space-lg);
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--color-paper);
+  background:var(--color-accent);
+  border:none;
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  box-shadow:var(--shadow-sm);
+  transition:
+    background var(--dur-fast) var(--ease),
+    transform var(--dur-fast) var(--ease),
+    box-shadow var(--dur-base) var(--ease-out);
 }
-
 .nav-cta-btn:hover{
-    transform:
-        translateY(-2px);
-
-    color:var(--white);
-
-    box-shadow:
-        0 14px 32px rgba(0,0,0,0.24),
-        inset 0 1px rgba(255,255,255,0.25);
+  transform:translateY(-2px);
+  box-shadow:var(--shadow-md);
 }
 
-
-
-/* =========================================================
-   BURGER MENU
-   ========================================================= */
-
+/* ---------------------- NAV BURGER (mobile) ---------------------- */
 .nav-burger{
-    display:none;
-
-    width:44px;
-    height:44px;
-
-    align-items:center;
-    justify-content:center;
-
-    background:
-        rgba(255,255,255,0.08);
-
-    border:
-        1px solid rgba(255,255,255,0.18);
-
-    border-radius:var(--r-md);
-
-    cursor:pointer;
-
-    color:var(--white);
-
-    -webkit-backdrop-filter:blur(12px);
-    backdrop-filter:blur(12px);
-
-    box-shadow:
-        inset 0 1px rgba(255,255,255,0.15);
+  display:none;
+  width:44px; height:44px;
+  align-items:center; justify-content:center;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:var(--radius-md);
+  cursor:pointer;
+  color:var(--color-paper);
+  -webkit-backdrop-filter:blur(12px);
+  backdrop-filter:blur(12px);
+  box-shadow:inset 0 1px rgba(255,255,255,0.15);
+  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
 }
-
-
-
-/* =========================================================
-   BURGER LINES
-   ========================================================= */
-
-.nav-burger span,
-.nav-burger span::before,
-.nav-burger span::after{
-    content:"";
-
-    display:block;
-
-    width:18px;
-    height:2px;
-
-    background:var(--white);
-
-    border-radius:2px;
-
-    transition:
-        transform var(--dur-base) var(--ease),
-        top var(--dur-base) var(--ease);
+.nav-burger:hover{
+  background:rgba(255,255,255,0.14);
+  border-color:rgba(255,255,255,0.30);
+  transform:translateY(-1px);
 }
-
-.nav-burger span{
-    position:relative;
-}
-
-.nav-burger span::before{
-    position:absolute;
-    top:-6px;
-}
-
-.nav-burger span::after{
-    position:absolute;
-    top:6px;
-}
-
-
-
-/* =========================================================
-   BURGER ACTIVE
-   ========================================================= */
-
 .nav-burger[aria-expanded="true"] span{
-    background:transparent;
+  background:transparent;
 }
-
-.nav-burger[aria-expanded="true"] span::before{
-    top:0;
-    transform:
-        rotate(45deg);
-}
-
+.nav-burger[aria-expanded="true"] span::before,
 .nav-burger[aria-expanded="true"] span::after{
-    top:0;
-    transform:
-        rotate(-45deg);
+  top:0;
+  transform:rotate(45deg);
+}
+.nav-burger[aria-expanded="true"] span::after{
+  transform:rotate(-45deg);
 }
 
-
-
-/* =========================================================
-   MOBILE MENU
-   ========================================================= */
-
+/* ---------------------- MOBILE MENU ---------------------- */
 .mobile-menu{
-    position:fixed;
-    inset:
-        var(--nav-h)
-        0
-        0
-        0;
-
-    z-index:110;
-
-    padding:
-        var(--s-4)
-        var(--s-5)
-        var(--s-8);
-
-    overflow-y:auto;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(25,35,48,0.98),
-            rgba(31,55,78,0.98)
-        );
-
-    color:var(--white);
-
-    -webkit-backdrop-filter:
-        blur(20px)
-        saturate(140%);
-
-    backdrop-filter:
-        blur(20px)
-        saturate(140%);
+  position:fixed;
+  inset:calc(var(--nav-h) * 1) 0 0 0;
+  z-index:110;
+  padding:var(--space-md) var(--space-md);
+  overflow-y:auto;
+  background:var(--color-primary);
+  color:var(--color-paper);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
+  backdrop-filter:blur(20px) saturate(140%);
+}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){
+  .mobile-menu{background:#1f374e;color:var(--color-paper);}
 }
 
-
-
-/* =========================================================
-   MOBILE FALLBACK
-   ========================================================= */
-
-@supports not (
-    (
-        -webkit-backdrop-filter:blur(1px)
-    )
-    or
-    (
-        backdrop-filter:blur(1px)
-    )
-){
-    .mobile-menu{
-        background:
-            #1f374e;
-
-        color:var(--white);
-    }
-}
-
-
-
-/* =========================================================
-   MOBILE GROUPS
-   ========================================================= */
-
-.mm-group{
-    border-bottom:
-        1px solid rgba(255,255,255,0.15);
-}
-
+/* Mobile group titles */
 .mm-group-link{
-    flex:1;
-    padding:16px 4px;
-
-    font-family:var(--f-display);
-    font-size:1.25rem;
-    font-weight:600;
-
-    color:var(--white);
+  flex:1;
+  padding:var(--space-md) var(--space-xs);
+  font-family:var(--font-display);
+  font-size:1.25rem;
+  font-weight:600;
+  color:var(--color-paper);
 }
-
 .mm-arrow{
-    width:44px;
-    height:44px;
-
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    background:none;
-    border:none;
-
-    color:var(--white);
-
-    cursor:pointer;
+  width:44px; height:44px;
+  display:inline-flex;
+  align-items:center; justify-content:center;
+  color:var(--color-paper);
+  cursor:pointer;
 }
-
-
-
-/* =========================================================
-   MOBILE SUB MENU
-   ========================================================= */
-
 .mm-sub{
-    padding:
-        0
-        4px
-        var(--s-4);
+  padding:0 var(--space-xs) var(--space-md);
 }
-
 .mm-sub-title{
-    font-family:var(--f-mono);
-    font-size:0.66rem;
-    letter-spacing:0.1em;
-    text-transform:uppercase;
-
-    color:
-        rgba(255,255,255,0.60);
-
-    margin:
-        var(--s-3)
-        0
-        var(--s-2);
+  font-family:var(--font-mono);
+  font-size:0.66rem;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:rgba(var(--color-paper-rgb),0.60);
+  margin:var(--space-xs) 0 var(--space-xs);
 }
-
 .mm-sub-link{
-    display:block;
-    padding:11px 4px;
-
-    font-size:0.98rem;
-
-    color:var(--white);
-
-    transition:
-        opacity .2s ease,
-        transform .2s ease;
+  display:block;
+  padding:var(--space-xs) var(--space-xs);
+  font-size:0.98rem;
+  color:var(--color-paper);
+  transition:color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
 }
-
 .mm-sub-link:hover{
-    color:var(--white);
-    opacity:0.8;
-    transform:
-        translateX(4px);
+  color:var(--color-paper);
+  opacity:0.85;
+  transform:translateX(4px);
 }
 
-
-
-/* =========================================================
-   MOBILE CTA
-   ========================================================= */
-
-.mm-cta{
-    display:inline-block;
-    margin-top:var(--s-5);
-    color:var(--white);
+/* ---------------------- DROPDOWN PANEL ---------------------- */
+.mega-panel{
+  position:absolute;
+  top:calc(100% + 12px);
+  left:0;
+  width:min(760px,92vw);
+  background:var(--color-primary);
+  color:var(--color-paper);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:var(--radius-lg);
+  -webkit-backdrop-filter:blur(10px) saturate(120%);
+  backdrop-filter:blur(10px) saturate(120%);
+  box-shadow:var(--shadow-md);
+  overflow:hidden;
+  transition:opacity var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+  opacity:0;
+  transform:translateY(8px);
+}
+.mega-panel.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+.mega-panel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,0.07),transparent 45%);
+  opacity:0.6;
+}
+.mega-grid{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.1fr 1fr 1fr;
+  gap:var(--space-md);
+  padding:var(--space-md);
+}
+.mega-heading h4{color:var(--color-paper);}
+.mega-lede p{
+  font-size:0.9rem;
+  color:rgba(var(--color-paper-rgb),0.75);
+  margin:0 0 var(--space-xs);
+}
+.mega-explore{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-family:var(--font-mono);
+  font-size:0.78rem;
+  color:var(--color-accent);
+}
+.mega-group-title{
+  font-family:var(--font-mono);
+  font-size:0.68rem;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:rgba(var(--color-paper-rgb),0.85);
+  padding-bottom:var(--space-xs);
+  margin-bottom:var(--space-xs);
+  border-bottom:1px solid rgba(var(--color-paper-rgb),0.20);
+}
+.mega-group-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.mega-link{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--space-xs);
+  padding:var(--space-xs) var(--space-xs);
+  font-size:0.9rem;
+  font-weight:500;
+  color:var(--color-paper);
+  border-radius:var(--radius-md);
+  transition:background var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease);
+}
+.mega-link:hover{
+  background:rgba(255,255,255,0.10);
+  transform:translateX(4px);
+  color:var(--color-paper);
+}
+.mega-unverified{
+  font-family:var(--font-mono);
+  font-size:0.6rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:rgba(var(--color-paper-rgb),0.65);
+  border:1px solid rgba(var(--color-paper-rgb),0.20);
+  border-radius:var(--radius-pill);
+  padding:2px 8px;
+  margin-left:8px;
 }
 
-
-
-/* =========================================================
-   GLASS VARIABLES
-   ========================================================= */
-
-:root{
-    --glass-light:
-        rgba(255,255,255,0.10);
-
-    --glass-border:
-        rgba(255,255,255,0.18);
-
-    --glass-blur-lg:
-        32px;
-}
-
-
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
+/* ---------------------- RESPONSIVE ---------------------- */
 @media (max-width:1024px){
-    .meganav-navigable{
-        display:none;
-    }
-
-    .nav-burger{
-        display:inline-flex;
-    }
+  .meganav-navigable{display:none;}
+  .nav-burger{display:inline-flex;}
 }
 
-
-
-/* =========================================================
-   DARK TEXT WHEN SCROLLED (for light backgrounds)
-   ========================================================= */
-
-.meganav.is-scrolled,
+/* ---------------------- DARK TEXT ON LIGHT ---------------------- */
 .meganav.is-scrolled .brand,
 .meganav.is-scrolled .brand-fallback,
 .meganav.is-scrolled .meganav-toplink,
@@ -977,26 +366,6 @@
 .meganav.is-scrolled .mm-arrow,
 .meganav.is-scrolled .mm-sub-title,
 .meganav.is-scrolled .mm-sub-link,
-.meganav.is-scrolled .mm-sub-link:hover,
-.meganav.is-scrolled .mm-cta{
-    color:var(--ink);
-}
-
-/* Keep CTA button white for contrast on copper background */
-.meganav.is-scrolled .nav-cta-btn,
-.meganav.is-scrolled .nav-cta-btn:hover{
-    color:var(--white);
-}
-
-/* Keep mega-panel and its contents white on dark dropdown */
-.meganav.is-scrolled .mega-panel,
-.meganav.is-scrolled .mega-panel::before,
-.meganav.is-scrolled .mega-heading h4,
-.meganav.is-scrolled .mega-lede p,
-.meganav.is-scrolled .mega-group-title,
-.meganav.is-scrolled .mega-link,
-.meganav.is-scrolled .mega-link:hover,
-.meganav.is-scrolled .mega-explore,
-.meganav.is-scrolled .mega-unverified{
-    color:var(--white);
+.meganav.is-scrolled .mm-sub-link:hover{
+  color:var(--color-text);
 }

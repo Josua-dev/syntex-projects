@@ -1,33 +1,56 @@
 :root{
-  --navy:#0d1b2a;--navy-700:#14273c;--navy-600:#1c3350;--graphite:#262b31;--steel:#4a5765;
-  --paper:#f7f7f5;--paper-dim:#eeeeea;--paper-tint:#f1f1ee;--white:#ffffff;
-  --copper:#b5651d;--copper-deep:#8f4e14;--copper-soft:#c98a4e;--signal:#1f6f8b;--signal-deep:#16576e;
-  --ink:#14181d;--ink-soft:#48555f;--ink-faint:#6a7681;
-  --line:#e4e3dd;--border:#d7d6ce;--line-on-dark:rgba(247,247,245,0.12);
-  --glass-light:rgba(255,255,255,0.72);--glass-dark:rgba(13,27,42,0.55);--glass-border:rgba(255,255,255,0.55);--glass-border-dk:rgba(255,255,255,0.10);--glass-blur:14px;--glass-blur-lg:22px;
-  --orange:var(--copper);--orange-dark:var(--copper-deep);--blueprint:var(--navy);
-  --r-xs:6px;--r-sm:10px;--r-md:14px;--r-lg:20px;--r-xl:28px;--r-2xl:36px;--r-pill:999px;
-  --f-display:"Source Serif 4",Georgia,serif;--f-body:"Inter","Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;--f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
-  --t-eyebrow:clamp(0.72rem,0.7rem + 0.1vw,0.8rem);--t-body:clamp(0.95rem,0.92rem + 0.2vw,1.05rem);--t-lead:clamp(1.06rem,1rem + 0.55vw,1.32rem);
-  --t-h3:clamp(1.35rem,1.2rem + 0.9vw,1.9rem);--t-h2:clamp(1.9rem,1.55rem + 1.9vw,3rem);--t-h1:clamp(2.5rem,1.95rem + 3.4vw,4.6rem);
-  --lh-tight:1.08;--lh-body:1.65;
-  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:24px;--s-6:32px;--s-7:48px;--s-8:64px;--s-9:96px;--s-10:128px;
-  --nav-h:76px;--wrap:1240px;
-  --shadow-xs:0 1px 2px rgba(20,24,29,0.05);--shadow-sm:0 2px 8px -3px rgba(20,24,29,0.10);--shadow-md:0 10px 30px -12px rgba(20,24,29,0.16);--shadow-lg:0 24px 60px -24px rgba(20,24,29,0.22);--shadow-glass:0 8px 32px -8px rgba(13,27,42,0.18);--shadow-bronze:0 12px 28px -14px rgba(181,101,29,0.5);
-  --ease:cubic-bezier(0.4,0,0.2,1);--ease-out:cubic-bezier(0.16,1,0.3,1);--dur-fast:150ms;--dur-base:240ms;--dur-slow:480ms;
+  /* === Design Tokens for Premium Enterprise ICT Brand === */
+
+  /* Color System */
+  --color-primary:   #0d1b2a;   /* Deep Navy – primary brand color */
+  --color-secondary: #262b31;   /* Graphite – secondary/neutral */
+  --color-accent:    #b5651d;   /* Copper – accent for calls-to-action */
+  --color-surface:   #f7f7f5;   /* Paper – light surface */
+  --color-muted:     #6a7681;   /* Ink – muted text */
+  --color-text:      #14181d;   /* Ink – primary text */
+  --color-border:    #d7d6ce;   /* Light border */
+  --color-success:   #2e7d32;   /* Green – success */
+  --color-warning:   #e65100;   /* Orange – warning */
+  --color-error:     #c62828;   /* Red – error */
+
+  /* Typography */
+  --font-display:    "Source Serif 4", Georgia, serif;
+  --font-body:       "Inter","Source Sans 3",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  --font-mono:       "IBM Plex Mono",ui-monospace,Menlo,monospace;
+
+  /* Spacing System */
+  --space-xs:   4px;
+  --space-sm:   8px;
+  --space-md:  12px;
+  --space-lg:  16px;
+  --space-xl:  24px;
+  --space-2xl: 32px;
+  --space-3xl: 48px;
+  --space-4xl: 64px;
+
+  /* Border Radius System */
+  --radius-xs:   6px;
+  --radius-sm:  10px;
+  --radius-md:  14px;
+  --radius-lg:  20px;
+  --radius-xl:  28px;
+  --radius-full: 999px;   /* pill */
+
+  /* Shadow System */
+  --shadow-xs:   0 1px 2px rgba(20,24,29,0.05);
+  --shadow-sm:   0 2px 8px -3px rgba(20,24,29,0.10);
+  --shadow-md:   0 10px 30px -12px rgba(20,24,29,0.16);
+  --shadow-lg:   0 24px 60px -24px rgba(20,24,29,0.22);
+  --shadow-glass:0 8px 32px -8px rgba(13,27,42,0.18);
+  --shadow-bronze:0 12px 28px -14px rgba(181,101,29,0.5);
+
+  /* Motion & Transition */
+  --ease:        cubic-bezier(0.4,0,0.2,1);
+  --ease-out:    cubic-bezier(0.16,1,0.3,1);
+  --dur-fast:    150ms;
+  --dur-base:    240ms;
+  --dur-slow:    480ms;
+
+  /* Image & Media */
+  --img-bg:      color-mix(in srgb,var(--paper) 5%,transparent);
 }
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--t-body);line-height:var(--lh-body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-h1,h2,h3,h4{font-family:var(--f-display);color:var(--navy);line-height:var(--lh-tight);font-weight:600;letter-spacing:-0.01em}
-a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
-.wrap{width:min(var(--wrap),calc(100% - 2*var(--s-5)));margin-inline:auto}
-.eyebrow{font-family:var(--f-mono);font-size:var(--t-eyebrow);letter-spacing:0.14em;text-transform:uppercase;color:var(--copper);display:inline-flex;align-items:center;gap:var(--s-2)}
-.eyebrow::before{content:"";width:22px;height:1px;background:var(--copper);flex:none}
-:focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-radius:var(--r-xs)}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity var(--dur-slow) var(--ease-out),transform var(--dur-slow) var(--ease-out);will-change:opacity,transform}
-.reveal.is-in{opacity:1;transform:none}
-html.page-locked{overflow:hidden}
-.glass{background:var(--glass-light);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(150%);backdrop-filter:blur(var(--glass-blur)) saturate(150%);border:1px solid var(--glass-border);box-shadow:var(--shadow-glass)}
-.glass-dark{background:var(--glass-dark);-webkit-backdrop-filter:blur(var(--glass-blur)) saturate(140%);backdrop-filter:blur(var(--glass-blur)) saturate(140%);border:1px solid var(--glass-border-dk)}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:0.001ms!important;animation-iteration-count:1!important;transition-duration:0.001ms!important}.reveal{opacity:1;transform:none}}

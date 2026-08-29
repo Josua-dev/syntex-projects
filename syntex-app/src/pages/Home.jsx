@@ -13,14 +13,20 @@ export default function Home(){
   const reduce=useReducedMotion()
   const rise=(d=0)=>reduce?{}:{initial:{opacity:0,y:18},animate:{opacity:1,y:0},transition:{duration:0.55,delay:d,ease:[0.16,1,0.3,1]}}
   return(<>
+    {/* Premium Hero – strong visual anchor, clear value proposition */}
     <header className="hero" id="top">
-      <PhotoBg overlay={0.66}/>
+      <PhotoBg overlay={0.55}/>
       <div className="wrap hero-grid">
         <div className="hero-copy">
           <motion.span className="eyebrow" {...rise(0)}>Namibian ICT Systems Integrator · Est. {identity.incorporated}</motion.span>
-          <motion.h1 {...rise(0.08)}>We bring <span className="accent">clarity</span> to complex business systems.</motion.h1>
-          <motion.p className="lead" {...rise(0.16)}>Syntex Technologies designs, builds, and supports the security, enterprise, and utility systems that mid-market and government organisations across Namibia run on.</motion.p>
-          <motion.div className="hero-actions" {...rise(0.24)}><Link to="/solutions" className="btn btn-primary">Explore Solutions <ArrowIcon/></Link><Link to="/contact" className="btn btn-ghost hero-ghost">Talk to Syntex</Link></motion.div>
+          <motion.h1 {...rise(0.08)}>We engineer resilient ICT infrastructure for Namibia’s enterprises.</motion.h1>
+          <motion.p className="lead" {...rise(0.16)}>
+            Syntex designs, builds, and supports secure, scalable systems that keep mid‑market and government operations connected, secure and available.
+          </motion.p>
+          <motion.div className="hero-actions" {...rise(0.24)}>
+            <Link to="/solutions" className="btn btn-primary">Explore Solutions <ArrowIcon/></Link>
+            <Link to="/contact" className="btn btn-ghost hero-ghost">Talk to Syntex</Link>
+          </motion.div>
           <motion.div className="hero-facts" {...rise(0.32)}>
             <div className="fact"><b>{identity.incorporated}</b><span>Incorporated in Namibia</span></div>
             <div className="fact"><b>10+</b><span>Border deployment countries</span></div>
@@ -32,7 +38,7 @@ export default function Home(){
 
     <section className="showcase" aria-label="Syntex in the field"><Slideshow slides={heroSlides} interval={6000}/></section>
 
-    <section className="home-statement"><div className="wrap"><Reveal><span className="eyebrow">The systems that matter</span><p className="home-statement-text">We design, integrate and support the infrastructure that keeps enterprise and public-sector operations <span>connected, secure and available</span>.</p></Reveal></div></section>
+    <section className="home-statement"><div className="wrap"><Reveal><span className="eyebrow">The systems that matter</span><p className="home-statement-text">We design, integrate and support the infrastructure that keeps enterprise and public‑sector operations connected, secure and available.</p></Reveal></div></section>
 
     <section className="wrap home-caps">
       <Reveal className="home-caps-head"><span className="eyebrow">Core capabilities</span><h2>Solutions across the enterprise technology stack.</h2><Link to="/solutions" className="home-caps-all">View all solutions <ArrowIcon/></Link></Reveal>
@@ -45,7 +51,7 @@ export default function Home(){
     <section className="home-values"><div className="wrap"><Reveal className="home-values-head"><span className="eyebrow">How we work</span><h2>The standards we build every system around.</h2><p>{identity.legal} applies the same operating values to every engagement, regardless of client size or sector.</p></Reveal>
       <div className="home-values-grid">{vision.values.map((v,i)=><Reveal key={v.n} delay={i*70} className="home-value"><span className="home-value-n">{v.n}</span><h3>{v.title}</h3><p>{v.text}</p></Reveal>)}</div></div></section>
 
-    <section className="wrap home-process"><Reveal className="home-process-head"><span className="eyebrow">Our approach</span><h2>Solving complex systems problems with a proven process.</h2><p>End-to-end delivery — project management, change management, business process re-engineering and knowledge transfer built into every engagement.</p></Reveal>
+    <section className="wrap home-process"><Reveal className="home-process-head"><span className="eyebrow">Our approach</span><h2>Solving complex systems problems with a proven process.</h2><p>End‑to‑end delivery — project management, change management, business process re‑engineering and knowledge transfer built into every engagement.</p></Reveal>
       <ol className="home-timeline">{process.map((st,i)=><Reveal as="li" key={st.n} delay={i*60} className="home-step"><div className="home-step-marker"><span>{st.n}</span></div><div className="home-step-body"><h3>{st.title}</h3><p>{st.text}</p></div></Reveal>)}</ol></section>
 
     <section className="home-partners"><div className="wrap"><Reveal className="home-partners-head"><span className="eyebrow">Technology ecosystem</span><h2>Built on the platforms our clients already depend on.</h2><p>Syntex delivery spans {partners.length} vendor platforms and technologies represented across our engagements.</p></Reveal>
