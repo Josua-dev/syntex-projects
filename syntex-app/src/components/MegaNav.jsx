@@ -31,7 +31,7 @@ export default function MegaNav({ onOpenSearch, overHero=false }){
   return(<header className={['meganav',solid?'is-scrolled':'',showT?'is-over-hero':''].join(' ')}>
     <div className="meganav-inner">
       <Link to="/" className="brand" aria-label="Syntex Technologies — home">
-        <img className="brand-logo" src="/images/syntex-mark.png" alt="" width="40" height="40"/>
+        <img className="brand-logo" src="/images/syntex-mark.png" alt="" width="40" height="40" loading="lazy" />
         <span className="brand-fallback">Syntex Technologies (Pty) Ltd </span>
       </Link>
       <nav className="meganav-navigable" aria-label="Primary">
