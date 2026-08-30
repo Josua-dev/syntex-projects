@@ -122,4 +122,21 @@
   --glass-border: color-mix(in srgb, var(--color-paper) 40%, transparent);
   --glass-border-dk: color-mix(in srgb, var(--color-paper) 16%, transparent);
   --glass-blur:   14px;
+
+  /* ==================== INDUSTRIAL ANCHOR TOKENS ====================
+     Scoped to the home page redesign. Pitch-black surface, mono
+     typography, single signal color, 1px borders, 0-2px radius.
+     Other pages keep their existing tokens. */
+  --ind-bg:        #0B0C0A;          /* warm-black, not pure #000 */
+  --ind-bg-2:      #11130F;          /* slightly lifted panel */
+  --ind-fg:        #E8E8E0;          /* off-white, not pure #fff */
+  --ind-fg-dim:    #8A8A82;          /* dim mono text */
+  --ind-fg-faint:  #4A4A45;          /* faint rules */
+  --ind-signal:    #C6FF4A;          /* acid lime — single signal */
+  --ind-signal-dim: #6F8A2E;         /* dimmed signal for borders */
+  --ind-line:      #1F211D;          /* 1px border on black */
+  --ind-line-hi:   #2E3128;          /* elevated border */
+  --ind-mono:      "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --ind-mono-disp: "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --ind-num:       "JetBrains Mono", "IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
