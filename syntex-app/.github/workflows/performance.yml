@@ -1,0 +1,35 @@
+name: Performance Monitoring
+
+on:
+  push:
+    branches: [main, production, staging]
+  pull_request:
+    branches: [main, production, staging]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+
+      - run: npm ci
+
+      - run: npm run build
+
+      - name: Install Lighthouse CI
+        run: npm install -g @lighthouse-ci/cli@latest
+
+      - name: Run Lighthouse CI
+        run: |
+          lighthouse-ci https://syntex-site.vercel.app \
+            --url=https://syntex-site.vercel.app \
+            --categories=performance,best-practices,access \
+            --threshold=90 \
+            --assert=performance=90,best-practices=90,access=90
+        env:
+          CI: true

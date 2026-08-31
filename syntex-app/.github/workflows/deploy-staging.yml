@@ -1,0 +1,44 @@
+name: Deploy to Staging
+
+on:
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  push:
+    branches: [staging]  # optional: auto‑deploy on pushes to a staging branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - run: npm ci
+
+    - run: npm run build
+
+    # ----–––––––––––––––––––––––––––––––––––––––––––––––––
+    # The following step is a placeholder.
+    # Replace it with the actual deployment command for your hosting provider
+    # (e.g., Render, Vercel, Netlify, AWS Amplify, etc.).
+    # ----
+    - name: Deploy to staging environment
+      run: echo "🚀 Deploy step would run here (e.g., vercel --prod, or Render deploy)."
+      # If you have a deployment CLI, insert it here, e.g.:
+      # - name: Deploy with Render
+      #   run: render deploy --api-key=$RENDER_API_KEY
+      #   env:
+      #     RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+
+    - name: Post‑deployment sanity check
+      run: |
+        if [ -f "dist/index.html" ]; then
+          echo "✅ Build output found – ready for deployment."
+        else
+          echo "❌ Build output not found – aborting deployment."
+          exit 1
+        fi

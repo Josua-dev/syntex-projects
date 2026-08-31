@@ -1,0 +1,69 @@
+name: Production Deploy
+
+on:
+  workflow_dispatch:  # Manual trigger from GitHub UI
+  push:
+    branches: [main, production]  # Auto-deploy on pushes to main/production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - run: npm ci
+
+    - run: npm run build
+
+    # ----–––––––––––––––––––––––––––––––––––––––––––––––––
+    # Insert your production deployment command here.
+    # Examples:
+    #   - For Vercel:   vercel --prod --token=$VERCEL_TOKEN
+    #   - For Render:   render deploy --api-key=$RENDER_API_KEY
+    #   - For Netlify:  netlify deploy --prod --dir=dist
+    # ----–––––––––––––––––––––––––––––––––––––––––––––––––––
+    - name: Verify deployment output
+      run: |
+        if [ -f "dist/index.html" ]; then
+          echo "✅ Production build output found."
+        else
+          echo "❌ Production build output missing."
+          exit 1
+        fi
+
+    # ----–––––––––––––––––––––––––––––––––––––––––––––––––––
+    - name: Smoke test production site
+      run: |
+        # Wait a short period for the host to become reachable
+        sleep 10
+        # Perform a simple HTTP health check
+        RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://syntex-site.vercel.app/)
+        if [ "$RESPONSE" -ne 200 ]; then
+          echo "❌ Production health check failed (status $RESPONSE)"
+          exit 1
+        fi
+        echo "✅ Production health check passed (status 200)"
+
+    # ----––––––––––––––––––––––––––––––––––––––––––––––––––––
+    # Post‑deployment sanity check (optional)
+    # ----
+    # - name: Smoke test production site
+    #   run: |
+    #     # Wait a short period for the host to become reachable
+    #     sleep 10
+    #     # Perform a simple HTTP health check
+    #     RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" https://my‑production‑site.example.com)
+    #     if [ "$RESPONSE" -ne 200 ]; then
+    #       echo "❌ Production health check failed (status $RESPONSE)"
+    #       exit 1
+    #     fi
+    #     echo "✅ Production health check passed (status 200)"
+    #   env:
+    #     # Any secret needed for the test can be added here
+    #     # EXAMPLE_SECRET: ${{ secrets.EXAMPLE_SECRET }}

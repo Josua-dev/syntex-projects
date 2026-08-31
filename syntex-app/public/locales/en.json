@@ -1,0 +1,14 @@
+{
+  "welcome": "Welcome to Syntex Technologies",
+  "about": "About Us",
+  "services": "Our Services",
+  "serviceDescriptions": {
+    "ict": "ICT Systems Integration",
+    "consulting": "Business Consulting",
+    "hardware": "Hardware Solutions"
+  },
+  "contact": "Contact",
+  "footer": {
+    "copyright": "© {year} Syntex Technologies. All rights reserved."
+  }
+}

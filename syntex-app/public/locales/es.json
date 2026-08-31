@@ -1,0 +1,14 @@
+{
+  "welcome": "Bienvenido a Syntex Technologies",
+  "about": "Sobre Nosotros",
+  "services": "Nuestros Servicios",
+  "serviceDescriptions": {
+    "ict": "Integración de Sistemas de TI",
+    "consulting": "Consultoría de Negocios",
+    "hardware": "Soluciones de Hardware"
+  },
+  "contact": "Contacto",
+  "footer": {
+    "copyright": "© {year} Syntex Technologies. Todos los derechos reservados."
+  }
+}
